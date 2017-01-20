@@ -25,11 +25,11 @@
 								$ColumnValue7=htmlspecialchars($_POST['UserImage']);
 								$ColumnName8="UserGender";
 								$ColumnValue8=htmlspecialchars($_POST['UserGender']);
-								$ColumnName9="Date_Added";
-								$ColumnValue9=htmlspecialchars($_POST['Timestamp']);
+								$ColumnName9="UserAge";
+								$ColumnValue9=htmlspecialchars($_POST['UserAge']);
 
 	
-				$NewRowID=AddNewRow($tablename, $ColumnName1, $ColumnValue1,$ColumnName2, $ColumnValue2,$ColumnName3, $ColumnValue3,$ColumnName4, $ColumnValue4,$ColumnName5, $ColumnValue5,$ColumnName6, $ColumnValue6,$ColumnName7,$ColumnValue7, $ColumnValue8,$ColumnValue8, $ColumnValue9,$ColumnValue9);
+				$NewRowID=AddNewRow($tablename, $ColumnName1, $ColumnValue1,$ColumnName2, $ColumnValue2,$ColumnName3, $ColumnValue3,$ColumnName4, $ColumnValue4,$ColumnName5, $ColumnValue5,$ColumnName6, $ColumnValue6,$ColumnName7,$ColumnValue7, $ColumnName8,$ColumnValue8, $ColumnName9,$ColumnValue9);
 			?>
 	</center>
 </body>
@@ -37,7 +37,7 @@
 
 <?
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-function AddNewRow($tablename, $ColumnName1, $ColumnValue1,$ColumnName2, $ColumnValue2, $ColumnName3, $ColumnValue3,$ColumnName4, $ColumnValue4, $ColumnName5, $ColumnValue5 , $ColumnValue6, $ColumnValue6,$ColumnName7, $ColumnValue7, $ColumnName8, $ColumnValue8,$ColumnName9, $ColumnValue9)
+function AddNewRow($tablename, $ColumnName1, $ColumnValue1,$ColumnName2, $ColumnValue2, $ColumnName3, $ColumnValue3,$ColumnName4, $ColumnValue4, $ColumnName5, $ColumnValue5 , $ColumnName6, $ColumnValue6,$ColumnName7, $ColumnValue7, $ColumnName8, $ColumnValue8,$ColumnName9, $ColumnValue9)
 {
 	/***************************************************************
 	* Prupose: Adds a new row to an existing table
@@ -48,9 +48,9 @@ function AddNewRow($tablename, $ColumnName1, $ColumnValue1,$ColumnName2, $Column
 ****************************************************************/
 		
 		$sql="INSERT INTO $tablename ($ColumnName1, $ColumnName2, $ColumnName3, $ColumnName4, $ColumnName5, $ColumnName6,$ColumnName7,$ColumnName8, $ColumnName9) 
-		VALUES('$ColumnValue1', '$ColumnValue2','$ColumnValue3', '$ColumnValue4', '$ColumnValue5', '$ColumnValue6', '$ColumnValue7',$ColumnValue8, $ColumnValue9)";
+		VALUES('$ColumnValue1', '$ColumnValue2','$ColumnValue3', '$ColumnValue4', '$ColumnValue5', '$ColumnValue6', '$ColumnValue7','$ColumnValue8', '$ColumnValue9')";
 		
-		//echo $sql;		
+		echo $sql;		
 
 		include "Student6.ConnectString.php";
 		if (mysqli_query($connect, $sql)) 
