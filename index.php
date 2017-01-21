@@ -73,27 +73,10 @@
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-   <a class="navbar-brand" href="#">  
-   <img src="http://www.blackbeltcoding.com/wp-content/themes/blackbelt/images/blackbelt-logo-white.svg" alt="BlackBelt Coding" style="width:150px;border:0;">
-     </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Sign in</a></li>
-        <li><a href="#">Sign up</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<!--nav bar-->
+    <div>
+            <?php include 'nav-bar.php';?>
+    </div>  
 
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
