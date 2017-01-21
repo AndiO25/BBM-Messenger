@@ -176,15 +176,9 @@ body {
                   <li>Team 3</li>
                 </ul>
 
-                <li data-target="#new">
-                  <a href="#"><i></i> &emsp; USERS</a>
-                </li>
+                <li data-target="#new">&emsp; USERS</li>
                 <ul class="sub-menu" id="new">
-                        <li>allan</li>
-                        <li>josue</li>
-                        <li>andio</li>
-                        <li>meiza</li>
-                        <li>nacho</li>
+                <?php include "Users.INCLUDE.ShowUsers.php";?>
                 </ul>
 
             </ul>

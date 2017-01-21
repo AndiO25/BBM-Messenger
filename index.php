@@ -14,7 +14,7 @@
   body {
       font: 20px Montserrat, sans-serif;
       line-height: 1.8;
-      color: #f5f6f7;
+      /*color: #f5f6f7;*/
       background-image: url('http://writingwenches.com/wp-content/uploads/2015/01/bigstock-Female-Hands-Typing-On-A-Lapto-68125156.jpg');
       background-position: center center;
       background-repeat: no-repeat;
@@ -49,19 +49,6 @@
       padding-top: 70px;
       padding-bottom: 70px;
   }
-  .navbar {
-      padding-top: 5px;
-      padding-bottom: 15px;
-      border: 0;
-      border-radius: 0;
-      margin-bottom: 0;
-      font-size: 12px;
-      letter-spacing: 5px;
-      background-color: #595959;
-  }
-  .navbar-nav  li a:hover {
-      color: #fff !important;
-  }
 
   footer {
     position: fixed;
@@ -71,12 +58,9 @@
   }
   </style>
 </head>
-<body>
-
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 <!--nav bar-->
-    <div>
-            <?php include 'nav-bar.php';?>
-    </div>  
+    <div> <?php include 'nav-bar.php';?> </div>  
 
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">

@@ -27,12 +27,6 @@
       color: #fff;
   }
 
-  h1 {
-    color: #d19b3d;
-    font-size: 40px;
-    font-weight: bold;
-  }
-
   .container-fluid {
       padding-top: 70px;
       padding-bottom: 70px;
@@ -46,6 +40,7 @@
       font-size: 12px;
       letter-spacing: 5px;
       background-color: #595959;
+      color: #282828 !important;
   }
   .navbar-nav  li a:hover {
       color: #fff !important;
@@ -57,6 +52,10 @@
     bottom: 0;
     width: 100%;
   }
+
+    .text-left {
+        text-indent: 170px;
+    }
   </style>
 
 <!-- Navbar -->
@@ -74,15 +73,55 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a data-toggle="modal" data-target="#singUpModal" href="#singUpModal"><span class="glyphicon glyphicon-log-in"></span>Log in</a></li>
-        <li><a data-toggle="modal" data-target="#logInModal" href="#logInModal"><span class="glyphicon glyphicon-user"></span> Register</li>
+        <li><a href="http://student-projects.miami/BBM/Message.MainWindow.php"><span class="glyphicon glyphicon-log-in"></span>Log in</a></li>
+        <li><a data-toggle="modal" data-target="#signUpModal" href="#signUpModal"><span class="glyphicon glyphicon-user"></span> Register</a></li>
       </ul>
     </div>  
   </div>
 </nav>
 
+<!--LogIn Modal-->
+<div class="modal fade" id="logInModal">
+	<div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">Log-in</h4>
+        </div>
+        <div class="modal-body">
+                <!-- The form inside body of modal -->
+                <form id="loginForm" method="POST" class="form-horizontal" onsubmit="return validateUser()" action="http://student-projects.miami/BBM/Message.MainWindow.php">
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">Username</label>
+                        <div class="col-xs-5">
+                            <input type="text" class="form-control" name="user" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">Password</label>
+                        <div class="col-xs-5">
+                            <input type="password" class="form-control" name="password" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-5 col-xs-offset-3">
+                            <button type="submit" class="btn btn-primary" data-dismiss="modal">Login</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                    </div>
+                        <p class="text-left"><a href="#">Forgot password?</a></p>
+                        <br>
+                    </div>
+                </form>
+        </div>
+      </div>
+    </div>
+</div>
+
   <!--SignUp Modal-->
-<div class="modal fade" id="singUpModal">
+<div class="modal fade" id="signUpModal">
 	<div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -109,42 +148,29 @@
     </div>
 </div>
 
-<!--LogIn Modal-->
-<div class="modal fade" id="logInModal">
-	<div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title">Log-in</h4>
-        </div>
-        <div class="modal-body">
-                <!-- The form inside body of modal -->
-                <form id="loginForm" method="POST" class="form-horizontal" onsubmit="return validateUser()" action="validate.php">
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">Username</label>
-                        <div class="col-xs-5">
-                            <input type="text" class="form-control" name="user" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">Password</label>
-                        <div class="col-xs-5">
-                            <input type="password" class="form-control" name="password" />
-                        </div>
-                    </div>
+<script>
+    function validateUser() {
+        window.location = "http://student-projects.miami/BBM/Message.MainWindow.php">;
+        <div class="form-group">"
+        var x = document.forms["myForm"]["user"].value;
+        if (x == "") {
+            alert("name must be filled out");
+            return false;
+        } // end if
+        return validateEmail();
+    } // end fuction
 
-                    <div class="form-group">
-                        <div class="col-xs-5 col-xs-offset-3">
-                            <button type="submit" class="btn btn-primary">Login</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        </div>
-                    </div>
-                    </div>
-                        <p class="text-left"><a href="#">Forgot password?</a></p>
-                        <br>
-                    </div>
-                </form>
-        </div>
-      </div>
-    </div>
-</div>
+        $(function(){
+    $(".dropdown").hover(            
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).fadeIn("fast");
+                $(this).toggleClass('open');
+                $('b', this).toggleClass("caret caret-up");                
+            },
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).fadeOut("fast");
+                $(this).toggleClass('open');
+                $('b', this).toggleClass("caret caret-up");                
+            });
+    });
+</script>
