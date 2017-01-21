@@ -15,6 +15,11 @@
       font: 20px Montserrat, sans-serif;
       line-height: 1.8;
       color: #f5f6f7;
+      background-image: url('http://writingwenches.com/wp-content/uploads/2015/01/bigstock-Female-Hands-Typing-On-A-Lapto-68125156.jpg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
   }
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
@@ -33,6 +38,13 @@
       background-color: #595959;  /* Dark Grey */        
       color: #fff;
   }
+
+  h1 {
+    color: #d19b3d;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
   .container-fluid {
       padding-top: 70px;
       padding-bottom: 70px;
@@ -48,7 +60,14 @@
       background-color: #595959;
   }
   .navbar-nav  li a:hover {
-      color: #595959 !important;
+      color: #fff !important;
+  }
+
+  footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
   }
   </style>
 </head>
@@ -64,14 +83,13 @@
         <span class="icon-bar"></span>                        
       </button>
    <a class="navbar-brand" href="#">  
-   <img src="http://www.blackbeltcoding.com/wp-content/themes/blackbelt/images/blackbelt-logo-white.svg" alt="BlackBelt Coding" style="width:150px;height:40px;border:0;">
+   <img src="http://www.blackbeltcoding.com/wp-content/themes/blackbelt/images/blackbelt-logo-white.svg" alt="BlackBelt Coding" style="width:150px;border:0;">
      </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">WHO</a></li>
-        <li><a href="#">WHAT</a></li>
-        <li><a href="#">WHERE</a></li>
+        <li><a href="#">Sign in</a></li>
+        <li><a href="#">Sign up</a></li>
       </ul>
     </div>
   </div>
@@ -79,9 +97,7 @@
 
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
-  <h3 class="margin">Who Am I?</h3>
-  <img src="bird.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
-  <h3>I'm an adventurer</h3>
+  <h1>Welcome to Blackbelt Messenger</h1>
 </div>
 
 
