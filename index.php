@@ -14,7 +14,12 @@
   body {
       font: 20px Montserrat, sans-serif;
       line-height: 1.8;
-      color: #f5f6f7;
+      /*color: #f5f6f7;*/
+      background-image: url('http://writingwenches.com/wp-content/uploads/2015/01/bigstock-Female-Hands-Typing-On-A-Lapto-68125156.jpg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
   }
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
@@ -33,55 +38,33 @@
       background-color: #595959;  /* Dark Grey */        
       color: #fff;
   }
+
+  h1 {
+    color: #d19b3d;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
   .container-fluid {
       padding-top: 70px;
       padding-bottom: 70px;
   }
-  .navbar {
-      padding-top: 5px;
-      padding-bottom: 15px;
-      border: 0;
-      border-radius: 0;
-      margin-bottom: 0;
-      font-size: 12px;
-      letter-spacing: 5px;
-      background-color: #595959;
-  }
-  .navbar-nav  li a:hover {
-      color: #595959 !important;
+
+  footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
   }
   </style>
 </head>
-<body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-   <a class="navbar-brand" href="#">  
-   <img src="http://www.blackbeltcoding.com/wp-content/themes/blackbelt/images/blackbelt-logo-white.svg" alt="BlackBelt Coding" style="width:150px;height:40px;border:0;">
-     </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">WHO</a></li>
-        <li><a href="#">WHAT</a></li>
-        <li><a href="#">WHERE</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+<!--nav bar-->
+    <div> <?php include 'nav-bar.php';?> </div>  
 
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
-  <h3 class="margin">Who Am I?</h3>
-  <img src="bird.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
-  <h3>I'm an adventurer</h3>
+  <h1>Welcome to Blackbelt Messenger</h1>
 </div>
 
 
