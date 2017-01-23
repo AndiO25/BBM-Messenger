@@ -16,7 +16,7 @@
 			<!-- ***************************** HTML Comment Line ********************************************************-->
 			<? 	
 
-				CreateTable("Teams","TeamID", "TeamCaptainUserID", "TeamName", "TeamImage"); 
+				CreateTable("Users","UsersID", "EmailAddress", "Password", "SaltString", "First_Name", "Middle_Name", "Last_Name", "UserImage", "UserGender", "UserAge"); 
 			
 			?>
 	</center>
@@ -40,8 +40,9 @@ function CreateTable($tablename,$id, $col1, $col2, $col3, $col4)
 		$query="CREATE TABLE IF NOT EXISTS $tablename(
 			$id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 			
 			$col1 INT(6),
-			$col2 VARCHAR(255),
-			$col3 VARCHAR(255),
+			$col2 INT(6),
+			$col3 TEXT,
+			$col4 VARCHAR(255),
 			Added_On TIMESTAMP
 			) CHARSET utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ";
 

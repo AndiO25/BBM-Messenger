@@ -11,11 +11,11 @@
 <html lang="en">
 <body>
   <center>
-      <h1>Users Table</h1>
-      <p>This show everything in the users table</p>
+      <h1>Show Everything</h1>
+      <p>Shows everything in the messages table</p>
         <!-- ***************************** ********************************************************-->
         <?
-          ShowEntireTable("Users");
+          ShowEntireTable("Teams");
         ?>
         
   </center>

@@ -1,0 +1,10 @@
+Alltel,@message.alltel.com,@message.alltel.com
+AT&T,@txt.att.net,@mms.att.net
+Boost Mobile,@myboostmobile.com,@myboostmobile.com
+Nextel,@messaging.nextel.com,@messaging.nextel.com
+Sprint PCS,@messaging.sprintpcs.com,@pm.sprint.com
+T-Mobile,@tmomail.net,@tmomail.net
+US Cellular,@email.uscc.net,@mms.uscc.net 
+Verizon,@vtext.com,@vzwpix.com
+Virgin Mobile USA,@vmobl.com,@vmobl.com
+MetroPCS,@mymetropcs.com,@mymetropcs.com 

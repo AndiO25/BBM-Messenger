@@ -18,6 +18,9 @@
 
 <div class="container">
  
+ 
+ 
+
   <!-- Modal -->
   <div class="modal fade" id="_ChangePassword" role="dialog">
     <div class="modal-dialog">
@@ -26,21 +29,31 @@
        <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Reset Password</h4>
+          <h4 class="modal-title">Personal Info</h4>
         </div>
         <div id="modal-body">
-        <form name="_ChangePassword" onSubmit="" action="Changepasswordbbm2.php" method="POST">
-      <table>
-          <!--<div class ="Email">
-            E-mail <input type="Text"  name="EmailAddress"></div>-->
-         <div class="OldPassword">
-       Old Password <input type="Text"  name="Password"></div>
         <div class="Newpassword">
-       New Password <input type="Text"  name="NewPassword"></div>
-       <div class="ConfirmPass">
-      Confirm Password <input type="Text"  name="ConfirmPassword"></div>
-                <align="center" colspan="2"><input type="submit" value="Submit">
-            </table>
+       New Password <input type="Text"  name="New"></div>
+       <div class="Oldpassword">
+      Confirm Password <input type="Text"  name="Old"></div>
+  
+
+       
+
+        
+        <!--<div class="modal-footer">-->
+          <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+          <div id="Submit_Changepassword">
+     
+          <form name="Status" onSubmit="" action="" method="post">
+            <tr>
+              <table>
+                <td colspan="2"><input type="submit" value="Submit"></td>
+                 </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
         </form>
   </div>
    

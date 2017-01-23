@@ -11,11 +11,11 @@
 <html lang="en">
 <body>
   <center>
-      <h1>Users Table</h1>
-      <p>This show everything in the users table</p>
+      <h1>CRUD Functions</h1>
+      <p>This code is to be used as code snippets</p>
         <!-- ***************************** ********************************************************-->
         <?
-          ShowEntireTable("Users");
+          ShowEntireTable("Courses");
         ?>
         
   </center>

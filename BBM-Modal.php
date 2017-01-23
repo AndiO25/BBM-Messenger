@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title></title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -55,11 +55,12 @@
           <div class="textavatar"<h6>Add/Edit Avatar</h6></div>
           <input type="file" class="form-control">
      
-      <div id="PersonalInfo">
-        <form name="PersonalInfo" onSubmit="" action="personalinfo.php" method="POST">
+<div id="PersonalInfo">
+  
+          <form name="PersonalInfo" onSubmit="" action="personalinfo.php" method="post">
             <tr>
               <table>
-                <td colspan="2"><input type="submit" value="Edit Personal Information"></td>
+                <td colspan="2"><input type="submit" value="Personal Info"></td>
                  </tr>
                 </table>
               </td>
@@ -70,7 +71,7 @@
       </div>
       <div id="Status">
      
-          <form name="Status" onSubmit="" action="Status.php" method="POST">
+          <form name="Status" onSubmit="" action="Status.php" method="post">
             <tr>
               <table>
                 <td colspan="2"><input type="submit" value="Status"></td>
@@ -84,10 +85,10 @@
       </div>
       <div id="ChangePassword">
     
-          <form name="Changepassword" onSubmit="" action="Changepasswordbbm.php" method="POST">
+          <form name="Changepassword" onSubmit="" action="Changepasswordbbm.php" method="post">
             <tr>
               <table>
-                <td colspan="2"><input type="submit" name="ChangePassword" value="Change Password"></td>
+                <td colspan="2"><input type="submit" value="Change Password"></td>
                  </tr>
                 </table>
               </td>
@@ -96,9 +97,10 @@
         </form>
 
       </div>
-      
+        <!--<div class="modal-footer">-->
+          <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
           <button type="button" class="SignOut">Sign Out</button>
-
+       <!-- </div>-->
       </div>
       
     </div>
@@ -108,6 +110,7 @@
 
 </body>
 </html>
+
 
 
 

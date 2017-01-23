@@ -11,12 +11,12 @@
 <html lang="en">
 <body>
   	<center>
-	  <h1>Administration</h1>
+	  <h1>SMS Gateway</h1>
 	  <p></p>
 			<!-- ***************************** HTML Comment Line ********************************************************-->
 			<? 	
-
-				CreateTable("Teams","TeamID", "TeamCaptainUserID", "TeamName", "TeamImage"); 
+				
+				CreateTable("SMS_Gateways","GatewayID", "GatewayName", "SMSGateway", "MMSGateway"); 
 			
 			?>
 	</center>
@@ -25,7 +25,7 @@
 
 <?
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-function CreateTable($tablename,$id, $col1, $col2, $col3, $col4)
+function CreateTable($tablename,$id, $col1, $col2, $col3)
 {
 /***************************************************************
 	* Prupose: Creates a simple 4 column table with a primary key
@@ -39,7 +39,7 @@ function CreateTable($tablename,$id, $col1, $col2, $col3, $col4)
 		echo "<h3>Creating a table called $tablename with column named the following. $id, $col1, $col2, $col3, $col4, $col5</h3>";
 		$query="CREATE TABLE IF NOT EXISTS $tablename(
 			$id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 			
-			$col1 INT(6),
+			$col1 VARCHAR(255),
 			$col2 VARCHAR(255),
 			$col3 VARCHAR(255),
 			Added_On TIMESTAMP

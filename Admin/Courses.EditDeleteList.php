@@ -1,46 +1,20 @@
-<? session_start();
-/***************************************************************
-  * Purpose: CRUD Code Snippets
-  * Created By: Allan Miller
-  * Created On: 13-Dec-2016
-  * Revised By: Allan Miller
-  * Revised On: 13-Dec-2016 
-****************************************************************/
-?>
 <!DOCTYPE html>
 <html lang="en">
 <body>
-  <center>
-      <h1>Users Table</h1>
-      <p>This show everything in the users table</p>
-        <!-- ***************************** ********************************************************-->
-        <?
-          ShowEntireTable("Users");
-        ?>
-        
-  </center>
-</body>
-</html>
-
-<?
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-function ShowEntireTable($tablename)
-{
-  /***************************************************************
-  * Prupose: Gets the column names and then the data from the table
-  * Created By: Allan Miller
-  * Created On: 13-Dec-2016
-  * Revised By: Allan Miller
-  * Revised On: 13-Dec-2016 
-****************************************************************/ 
-          
+    <center>
+    <h1>Course Management</h1>
+    <p>Select your course to edit or delete</p>
+      <!-- ***************************** HTML Table ********************************************************-->
+      <div class="container">
+  <p></p>            
+  <?
     echo "<table class='table table-bordered table-hover'>";
     echo "<thead style='color: white; background:black; font-weight: bold;'>";
     echo "<tr>";
-    /*************************************************************************
+     /*************************************************************************
     *             This is your first query for the column names              *
     **************************************************************************/
-      $query = "SHOW COLUMNS FROM $tablename";
+      $query = "SHOW COLUMNS FROM Courses";
       include "Student6.ConnectString.php";
       $connect = mysqli_connect($host_name, $user_name, $password, $database);
       $result = mysqli_query($connect,$query);
@@ -61,7 +35,7 @@ function ShowEntireTable($tablename)
     /*************************************************************************
     *  This is your second query for the actual rows of the database         *
     **************************************************************************/
-    echo $query="SELECT * FROM $tablename";
+    echo $query="SELECT * FROM Courses";
     //echo $query;
     include "Student6.ConnectString.php";
     $connect = mysqli_connect($host_name, $user_name, $password, $database);
@@ -74,13 +48,31 @@ function ShowEntireTable($tablename)
     {
       
           echo '<tr>';
-              for ($i = 0; $i <= $col_count; $i++){ //2nd for loop
-                  echo '<td>'.$ResultsArray[$i].'</td>';
-              }
+           $CourseID=$ResultsArray[0];
+           $CourseName=$ResultsArray[1];
+           $TeacherID=$ResultsArray[2];
+           $CourseDescription=$ResultsArray[3];
+           $CourseImage=$ResultsArray[4];
+           $CourseCatelogueNumber=$ResultsArray[5];
+                  echo "<tr>";
+                  echo "<td>$CourseCatelogueNumber</td>";
+                  echo "<td>$CourseName</td>";
+                  echo "<td><a href='Courses.Edit1.php?CourseID=$CourseID'>EDIT</a></td>";
+                  echo "<td><a href='Courses.Delete1.php?CourseID=$CourseID'>DETELE</a></td>";
+                  echo "</tr>";
           echo '</tr>';
     } // while($ResultsArray = mysqli_fetch_array($result)) 
     echo "</tbody>";    
     echo "</table>";
-} // end function
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-?>
+
+           
+        
+        ?>
+    
+</div>
+</center>
+</body>
+</html>
+
+
+

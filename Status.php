@@ -54,7 +54,7 @@ padding-left: 50%;
           <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
           <div id="Submit_Status">
      
-          <form name="Status" onSubmit="" action="" method="POST">
+          <form name="Status" onSubmit="" action="" method="post">
             <tr>
               <table>
                 <td colspan="2"><input type="submit" value="Submit"></td>

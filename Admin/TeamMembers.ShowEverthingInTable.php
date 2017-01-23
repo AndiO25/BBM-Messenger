@@ -15,7 +15,7 @@
       <p>This show everything in the users table</p>
         <!-- ***************************** ********************************************************-->
         <?
-          ShowEntireTable("Users");
+          ShowEntireTable("TeamMembers");
         ?>
         
   </center>
