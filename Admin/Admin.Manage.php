@@ -41,6 +41,10 @@
       <tr> 
         <td><a href='Users.CreateTable.php'>Create a Users Table</a></td>
       </tr>
+
+      <tr> 
+        <td><a href='Users.Add1.php'>Create a New User</a></td>
+      </tr>
       
       <tr>
         <td><a href='Users.DropTable.php'>Drop the Users Table and Start Over</a></td>
