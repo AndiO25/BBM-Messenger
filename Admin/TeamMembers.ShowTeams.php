@@ -23,11 +23,8 @@
                   $TeamName=$ResultsArray['TeamName'];
                   $TeamCaptainUserID=$ResultsArray['TeamCaptainUserID'];
                   $TeamImage=$ResultsArray['TeamImage'];
-
-                 
-
                       echo "<h1>$TeamName</h1>"; 
-                      if (isset($TeamCaptainUserID)) {
+                      if (isset($TeamCaptainUserID) && $TeamCaptainUserID != "") {
                         $TeamCaptain=GetTeamCaptainName($TeamCaptainUserID);
                       }else{
                         $TeamCaptain="No captain!";
