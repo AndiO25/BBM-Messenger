@@ -23,11 +23,13 @@
                   $TeamName=$ResultsArray['TeamName'];
                   $TeamCaptainUserID=$ResultsArray['TeamCaptainUserID'];
                   $TeamImage=$ResultsArray['TeamImage'];
-
-                 
-
                       echo "<h1>$TeamName</h1>"; 
-                      $TeamCaptain=GetTeamCaptainName($TeamCaptainUserID);
+                      if (isset($TeamCaptainUserID) && $TeamCaptainUserID != "") {
+                        $TeamCaptain=GetTeamCaptainName($TeamCaptainUserID);
+                      }else{
+                        $TeamCaptain="No captain!";
+                      }
+                      
                       echo "<h3><u>Team Captain:$TeamCaptain</u></h3>";
                       echo "<table class='table table-bordered table-hover'>";
                       echo "<tbody>";

@@ -16,11 +16,12 @@
 			if ($rowCount > 0)
 				{  //echo "hi";
 					$_SESSION['user'] = $_POST['user'];
-                    header('Location: Message.MainWindow.php'); 
+                    //header('Location: http://student-projects.miami/BBM/Message.MainWindow.php'); 
+					echo "true";
 				}
 			else 
 				{
-					header('Location: index.php?msg=Incorrect Email or Password');
+					echo "false";
 				}
 /////////////////////////////////////////////////////////////////////////////////
 function checkEmailPassword($frmUserName)

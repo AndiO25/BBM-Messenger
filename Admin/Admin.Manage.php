@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Courses Management</title>
+  <title>BBM Management</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -40,6 +40,10 @@
     <tbody>
       <tr> 
         <td><a href='Users.CreateTable.php'>Create a Users Table</a></td>
+      </tr>
+
+      <tr> 
+        <td><a href='Users.Add1.php'>Create a New User</a></td>
       </tr>
       
       <tr>
@@ -95,6 +99,11 @@
       <tr> 
         <td><a href='Teams.CreateTable.php'>Create a Teams Table</a></td>
       </tr>
+
+      <tr> 
+        <td><a href='Teams.Add1.php'>Create a New Teams</a></td>
+      </tr>
+
       <tr> 
         <td><a href='TeamMembers.CreateTable.php'>Create a TeamMembers Table</a></td>
       </tr>
