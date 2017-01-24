@@ -117,7 +117,7 @@
         </div>
         <div class="modal-body">
                 <!-- The form inside body of modal -->
-                <form id="loginForm" method="POST" class="form-horizontal" onsubmit="return validateUser()" action="validate.php">
+                <form id="loginForm" method="POST" class="form-horizontal" action="validate.php">
                     <div class="form-group">
                         <label class="col-xs-3 control-label">Username</label>
                         <div class="col-xs-5">
@@ -133,12 +133,15 @@
 
                     <div class="form-group">
                         <div class="col-xs-5 col-xs-offset-3">
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button id="submitForm" type="submit" class="btn btn-primary">Login</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         </div>
                     </div>
+
+                    <p id="LogInErrorMessage" style="display:none; color: red;"> Username or password incorrect</p>
                     </div>
                         <p class="text-left"><a href="#">Forgot password?</a></p>
+                        <label style="color: red;"><? if(isset($_GET[msg])) {echo $_GET['msg'];} ?> </label>
                         <br>
                     </div>
                 </form>
@@ -148,14 +151,63 @@
 </div>
 
 <script>
-    function validateUser() {
-        var x = document.forms["loginForm"]["user"].value;
-        if (x == "") {
-            alert("name must be filled out");
-            return false;
-        } // end if
-        return validateEmail();
-    } // end fuction
+/* must apply only after HTML has loaded */
+$(document).ready(function () {
+    $("#loginForm").on("submit", function(e) {
+        var postData = $(this).serializeArray();
+        var formURL = $(this).attr("action");
+        $.ajax({
+            url: formURL,
+            type: "POST",
+            data: postData,
+            success: function(data, textStatus, jqXHR) {
+                if(data=="false"){
+                    $('#LogInErrorMessage').css("display", "block");
+                }else{
+                    window.location.href = "http://student-projects.miami/BBM/Message.MainWindow.php";
+                }
+                //$('#contact_dialog .modal-header .modal-title').html("Result");
+                //$('#contact_dialog .modal-body').html(data);
+                //$("#submitForm").remove();
+            },
+            error: function(jqXHR, status, error) {
+                console.log(status + ": " + error);
+            }
+        });
+        e.preventDefault();
+    });
+     
+    $("#submitForm").on('click', function() {
+        $("#loginForm").submit();
+    });
+});
+// $(function() {
+
+//   $("#newModalForm").validate({
+//     rules: {
+//       pName: {
+//         required: true,
+//         minlength: 8
+//       },
+//       action: "required"
+//     },
+//     messages: {
+//       pName: {
+//         required: "Please enter some data",
+//         minlength: "Your data must be at least 8 characters"
+//       },
+//       action: "Please provide some data"
+//     }
+//   });
+// });
+    // function validateUser() {
+    //     var x = document.forms["loginForm"]["user"].value;
+    //     if (x == "") {
+    //         alert("name must be filled out");
+    //         return false;
+    //     } // end if
+    //     return validateEmail();
+    // } // end fuction
 
         $(function(){
     $(".dropdown").hover(            
