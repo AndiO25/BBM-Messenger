@@ -99,6 +99,11 @@
       <tr> 
         <td><a href='Teams.CreateTable.php'>Create a Teams Table</a></td>
       </tr>
+
+      <tr> 
+        <td><a href='Teams.Add1.php'>Create a New Teams</a></td>
+      </tr>
+
       <tr> 
         <td><a href='TeamMembers.CreateTable.php'>Create a TeamMembers Table</a></td>
       </tr>
