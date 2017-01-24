@@ -41,27 +41,28 @@ padding-left: 50%;
           <h4 class="modal-title">Status</h4>
         </div>
         <div id="modal-body">
+           <form name="Status" onSubmit="" action="Status2.php" method="POST">
+           <table>
           <div class="Online">
-            <input type="submit"  value="Online"></div>
-          <div class="Offline">
-            <input type="submit"  value="Offline"></div>
-         <div class="Ghost">
-           <input type="submit"  value="Ghost"></div>
-       
-
-        
-        <!--<div class="modal-footer">-->
-          <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-          <div id="Submit_Status">
-     
-          <form name="Status" onSubmit="" action="" method="post">
-            <tr>
-              <table>
+              
+              <img id="myImage1" src="Onlineicon.ico" style="width:50px">
+                <input type="Submit" value=Online>
+              </div>
+          <div class="Offline">    
+             
+              <img id="myImage2" src="Offlineicon.ico" style="width:50px">
+               <input type="Submit" value=Offline>
+              </div>
+          <div class="Ghost">
+            
+              <img id="myImage3" src="Ghosticon.png" style="width:50px">
+                 <input type="Submit" Value=Hidden>
+              </div>
+              
+                <!--<div id="Submit_Status"
                 <td colspan="2"><input type="submit" value="Submit"></td>
-                 </tr>
-                </table>
-              </td>
-            </tr>
+                </div>-->
+        
           </table>
         </form>
   </div>

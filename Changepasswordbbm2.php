@@ -40,7 +40,7 @@ function changeThePassword($ColumnValue4){
 	
 	
 	$EmailAddress=$_POST['EmailAddress'];
-	$ColumnValue4 = hash(sha256,SaltString, $ColumnValue4);
+	$ColumnValue4=hash(sha256,SaltString, $ColumnValue4);
 	
 		//$sql="UPDATE Users SET 	WHERE Password='$Password'";
 		$sql="UPDATE Users SET Password='$ColumnValue4' WHERE EmailAddress='$EmailAddress'";
@@ -52,8 +52,8 @@ function changeThePassword($ColumnValue4){
 		include "Student6.ConnectString.php";
 			if (mysqli_query($connect, $sql)) 
 			{
-				echo "<h3>Your new password is (For security reasons your password will be shown encrypted):" .$ColumnValue4. "</h3>";
-				//header("Location:BBM-Modal.php");
+				//echo "<h3>Your new password is:" .$ColumnValue4. "</h3>";
+				header("Location:BBM-Modal.php");
 			} else 
 			{
 				echo "Error: " . $sql . "<br>" . mysqli_error($connect);
