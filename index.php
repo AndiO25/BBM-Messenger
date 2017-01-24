@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
   <title>Bootstrap Theme Simply Me</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +14,7 @@
       font: 20px Montserrat, sans-serif;
       line-height: 1.8;
       /*color: #f5f6f7;*/
-      background-image: url('http://writingwenches.com/wp-content/uploads/2015/01/bigstock-Female-Hands-Typing-On-A-Lapto-68125156.jpg');
+      background-image: url('/images/background.jpg');
       background-position: center center;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -60,7 +59,7 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 <!--nav bar-->
-    <div> <?php include 'nav-bar.php';?> </div>  
+    <div> <?php include 'nav-bar.php';?></div>  
 
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
