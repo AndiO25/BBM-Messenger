@@ -36,23 +36,24 @@
   <div id="modal-body">
     <form name="Personal" onSubmit="" action="editinfo.php" method="POST">
       <table>
-        <div class="Firstname">
-           First Name <input type="Text"  name="First_Name"></div>
-        <div class="Middlename">
-         Middle Name <input type="Text" name="Middle_Name"></div>
-         <div class="Lastname">
-            Last Name <input type="Text"  name="Last_Name"></div>
-         <div class="UserGender">
-            User Gender <input type="Text"  name="UserGender"></div>
-         <div class ="UserAge">
-          User Age <input type="Text"  name="UserAge"></div>
-          <div class ="PhoneNumber">
-          Phone Number <input type="Text" name="UsersPhone"></div>
-         <div class ="Email">
-            E-mail <input type="Text"  name="EmailAddress"></div>
+         
+          <br>  First Name  <br> <input type="Text"  name="First_Name">
+        
+          <br> Middle Name  <br> <input type="Text" name="Middle_Name">
+    
+          <br>  Last Name  <br> <input type="Text"  name="Last_Name">
+        
+            <br>  User Age  <br> <input type="Text"  name="UserAge">
+       
+            <br>  Phone Number  <br> <input type="Text" name="UserPhone">
+        
+            <br>  E-mail  <br> <input type="Text"  name="EmailAddress">
 
-         <align="center" colspan="2"><input type="submit" value="Submit">
+            <br>  User Gender  <br> <input type="Text"  name="UserGender">
+ 
+         
       </table>
+      <align="center" colspan="2"><input type="submit" value="Submit">
     </form>
   </div>
 </div>

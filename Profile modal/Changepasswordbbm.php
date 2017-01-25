@@ -32,13 +32,13 @@
         <form name="_ChangePassword" onSubmit="" action="Changepasswordbbm2.php" method="POST">
       <table>
           <div class ="Email">
-            E-mail <input type="Text"  name="EmailAddress"></div>
+             <br> E-mail  <br> <input type="Text"  name="EmailAddress"></div>
         <!-- <div class="OldPassword">
        Old Password <input type="Text"  name="Password"></div>-->
         <div class="Newpassword">
-       New Password <input type="Text"  name="NewPassword"></div>
+       <br>  New Password  <br> <input type="Text"  name="NewPassword"></div>
        <div class="ConfirmPass">
-      Confirm Password <input type="Text"  name="ConfirmPassword"></div>
+       <br> Confirm Password  <br> <input type="Text"  name="ConfirmPassword"></div>
                 <align="center" colspan="2"><input type="submit" value="Submit">
             </table>
         </form>

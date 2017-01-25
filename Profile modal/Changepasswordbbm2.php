@@ -40,11 +40,11 @@ function changeThePassword($ColumnValue4,$SaltString){
 	
 	
 	$EmailAddress=$_POST['EmailAddress'];
-	$SaltString="ENCRYPTED";
+	$SaltString="123ABC";
 	$ColumnValue4=hash(sha256,$ColumnValue4+$SaltString);
 	
 		//$sql="UPDATE Users SET 	WHERE Password='$Password'";
-		$sql="UPDATE Users SET Password='$ColumnValue4', SaltString='$SaltString' WHERE EmailAddress='$EmailAddress'";
+		$sql="UPDATE Users SET Password='$ColumnValue4' , SaltString='$SaltString' WHERE EmailAddress='$EmailAddress'";
 	
 		
 	//echo "$sql<br><br>";
