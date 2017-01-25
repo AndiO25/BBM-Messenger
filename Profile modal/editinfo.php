@@ -4,7 +4,8 @@
 								$tablename="Users";
 								$ColumnName1="EmailAddress";
 								$ColumnValue1=htmlspecialchars($_POST['EmailAddress']);
-							
+							    $ColumnName2="UserPhone";
+								$ColumnValue2=htmlspecialchars($_POST['UserPhone']);
 								$ColumnName4="First_Name";
 								$ColumnValue4=htmlspecialchars($_POST['First_Name']);
 								$ColumnName5="Middle_Name";
@@ -17,7 +18,7 @@
 								$ColumnValue9=htmlspecialchars($_POST['UserAge']);
 
 	
-				UpdateRow($tablename, $ColumnName1, $ColumnValue1,$ColumnName4, $ColumnValue4,$ColumnName5, $ColumnValue5,$ColumnName6, $ColumnValue6,$ColumnName8,$ColumnValue8, $ColumnName9,$ColumnValue9);
+				UpdateRow($tablename, $ColumnName1, $ColumnValue1, $ColumnName2, $ColumnValue2,$ColumnName4, $ColumnValue4,$ColumnName5, $ColumnValue5,$ColumnName6, $ColumnValue6,$ColumnName8,$ColumnValue8, $ColumnName9,$ColumnValue9);
 			?>
 	</center>
 </body>
@@ -25,11 +26,11 @@
 
 <?
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-function UpdateRow($tablename, $ColumnName1, $ColumnValue1,$ColumnName4, $ColumnValue4,$ColumnName5, $ColumnValue5,$ColumnName6,$ColumnValue6,$ColumnName8,$ColumnValue8, $ColumnName9,$ColumnValue9)
+function UpdateRow($tablename, $ColumnName1, $ColumnValue1, $ColumnName2, $ColumnValue2,$ColumnName4, $ColumnValue4,$ColumnName5, $ColumnValue5,$ColumnName6, $ColumnValue6,$ColumnName8,$ColumnValue8, $ColumnName9,$ColumnValue9)
 {
 
 		
-		$sql="UPDATE $tablename SET $ColumnName1='$ColumnValue1', $ColumnName4='$ColumnValue4', $ColumnName5='$ColumnValue5', $ColumnName6='$ColumnValue6', $ColumnName8='$ColumnValue8', $ColumnName9='$ColumnValue9' WHERE $ColumnName1='$ColumnValue1'";
+		$sql="UPDATE $tablename SET $ColumnName1='$ColumnValue1', $ColumnName2='$ColumnValue2', $ColumnName4='$ColumnValue4', $ColumnName5='$ColumnValue5', $ColumnName6='$ColumnValue6', $ColumnName8='$ColumnValue8', $ColumnName9='$ColumnValue9' WHERE $ColumnName1='$ColumnValue1'";
 						
 		
 		echo "$sql; <br>";	

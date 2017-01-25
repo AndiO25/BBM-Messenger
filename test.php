@@ -33,6 +33,22 @@
  } 
  
 </style>
+
+
+
+
+
+<style>
+  
+
+
+
+
+
+
+
+
+</style>
 <body>
 
 <div class="container">
@@ -51,10 +67,30 @@
           <h4 class="modal-title">Profile</h4>
         </div>
         <div class="modal-body">
-          <img src="//placehold.it/100" class="Avatar"  alt="avatar">
-          <div class="textavatar"<h6>Add/Edit Avatar</h6></div>
-          <input type="file" class="form-control">
-     
+       
+
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+<div class="container clearfix">
+   <div class="avatar">
+     <input id="fileUpload" type="file" />
+ 
+
+
+
+ <form id="profilepic_form">
+<fieldset id="profilepic_controls">
+
+ <div style="width: 120px; height: 100px; position: relative; background-color: #fbfbfb;   border: 1px solid #b8b8b8; "data-controltype="image">
+  <img src="https://codiqa.com/static/images/v2/image.png" alt="image" style="position:     absolute; top: 50%; left: 50%; margin-left: -16px; margin-top: -18px">
+
+   <div style= "top:50px;"data-role="fieldcontain" data-controltype="camerainput">
+    <input type="file" name="" id="camerainput1" accept="image/*" capture>
+   </div>
+
+ </div>
+</fieldset>
+</form>
+
 <div id="PersonalInfo">
   
           <form name="PersonalInfo" onSubmit="" action="personalinfo.php" method="post">
@@ -111,6 +147,8 @@
 </body>
 </html>
 
+
+</script>
 
 
 
