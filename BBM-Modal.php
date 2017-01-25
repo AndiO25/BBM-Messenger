@@ -9,7 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <style>
-  .Avatar{
+  .UserImage{
     padding-left: 200px;
   }
   .textavatar{
@@ -23,13 +23,12 @@
     margin-left: 470px;
   }
  #PersonalInfo{
-  height:30px;
+  padding-top:30px;
   } 
- #Status{
-  height:30px;
- } 
+ 
+ 
  #ChangePassword{
-  height:30px;
+  height:60px;
  } 
  .modal-dialog{
   background-color: black;
@@ -53,11 +52,21 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Profile</h4>
         </div>
-        <div class="modal-body">
-          <img src="//placehold.it/100" class="Avatar"  alt="avatar">
-          <div class="textavatar"<h6>Add/Edit Avatar</h6></div>
-          <input type="file" class="form-control">
-     
+        <div id="UserImage">
+          <img src="//placehold.it/100" class="Avatar"  alt="avatar"></div>
+
+          <form action="uploaduserimage.php" method="post" enctype="multipart/form-data">
+                          <input type="file" name="fileToUpload" id="fileToUpload">
+                          <input type="submit" value="Upload Image" name="submit">
+                       </form>
+  
+
+         
+
+
+
+
+
       <div id="PersonalInfo">
         <form name="PersonalInfo" onSubmit="" action="personalinfo.php" method="POST">
             <tr>
@@ -71,7 +80,7 @@
         </form>
 
       </div>
-      <div id="Status">
+    <!--  <div id="Status">
      
           <form name="Status" onSubmit="" action="Status.php" method="POST">
             <tr>
@@ -84,7 +93,7 @@
           </table>
         </form>
   
-      </div>
+      </div>-->
       <div id="ChangePassword">
     
           <form name="Changepassword" onSubmit="" action="Changepasswordbbm.php" method="POST">
@@ -100,7 +109,7 @@
 
       </div>
       
-          <button type="button" class="SignOut">Sign Out</button>
+       <!--   <button type="button" class="SignOut">Sign Out</button>-->
 
       </div>
       
