@@ -16,7 +16,7 @@
 			<!-- ***************************** HTML Comment Line ********************************************************-->
 			<? 	
 
-				CreateTable("Teams","TeamsID", "TeamCaptainUserID", "TeamName", "TeamImage"); 
+				CreateTable("TeamMembers","TeamID", "UserID", "TeamName", "Full_Name"); 
 			
 			?>
 	</center>
