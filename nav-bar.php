@@ -89,20 +89,74 @@
           <h4 class="modal-title">Sign Up</h4>
         </div>
         <div class="modal-body">
-          <div class="form-group">
-    		<label for="email">Email address</label>
-    		<input class="form-control" id="email" placeholder="Enter email" type="email">
-  		  </div>
-		  <div class="form-group">
-		  	<label for="exampleInputPassword1">Password</label>
-			<input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
-		  </div>
-          <p class="text-right"><a href="#">Forgot password?</a></p>
-        </div>
-        <div class="modal-footer">
-          <a href="#" data-dismiss="modal" class="btn">Close</a>
-          <a href="#" class="btn btn-primary">Log-in</a>
-        </div>
+        <!--Form begins-->
+                    <form id="signupForm" method="POST" class="form-horizontal" action="user-registration.php">
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">Full name</label>
+                    <div class="col-xs-4">
+                        <input type="text" class="form-control" name="firstName" placeholder="First name" />
+                    </div>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" name="middleName" placeholder="Middle name" />
+                    </div>
+                    <div class="col-xs-4" style="padding-top:10px">
+                        <input type="text" class="form-control" name="lastName" placeholder="Last name" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">Email adress</label>
+                    <div class="col-xs-5">
+                        <input type="text" class="form-control" name="emailAddress" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">Password</label>
+                    <div class="col-xs-5">
+                        <input type="password" class="form-control" name="password" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">Phone Numer</label>
+                    <div class="col-xs-5">
+                        <input type="text" class="form-control" name="phoneNumber" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">Age</label>
+                    <div class="col-xs-5">
+                        <input type="text" class="form-control" name="age" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">Gender</label>
+                    <div class="col-xs-5">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="gender" value="male" /> Male
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="gender" value="female" /> Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-9 col-xs-offset-3">
+                        <button id="registerForm" type="submit" class="btn btn-primary" name="signup" value="Sign up">Register</button>
+                    <p id="RegisterErrorMessage" style="display:none; color: red;"> Username already used</p>
+                    </div>
+<br>
+                </div>
+                </form>
+            </div>
       </div>
     </div>
 </div>
@@ -116,7 +170,7 @@
           <h4 class="modal-title">Log-in</h4>
         </div>
         <div class="modal-body">
-                <!-- The form inside body of modal -->
+                <!-- Form begins -->
                 <form id="loginForm" method="POST" class="form-horizontal" action="validate.php">
                     <div class="form-group">
                         <label class="col-xs-3 control-label">Username</label>
@@ -137,11 +191,9 @@
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         </div>
                     </div>
-
-                    <p id="LogInErrorMessage" style="display:none; color: red;"> Username or password incorrect</p>
+                    <p id="LogInErrorMessage" style="display:none; color: red;"> Incorrect Username or Password</p>
                     </div>
                         <p class="text-left"><a href="#">Forgot password?</a></p>
-                        <label style="color: red;"><? if(isset($_GET[msg])) {echo $_GET['msg'];} ?> </label>
                         <br>
                     </div>
                 </form>
@@ -151,7 +203,8 @@
 </div>
 
 <script>
-/* must apply only after HTML has loaded */
+// must apply only after HTML has loaded
+// login function
 $(document).ready(function () {
     $("#loginForm").on("submit", function(e) {
         var postData = $(this).serializeArray();
@@ -166,9 +219,7 @@ $(document).ready(function () {
                 }else{
                     window.location.href = "http://student-projects.miami/BBM/Message.MainWindow.php";
                 }
-                //$('#contact_dialog .modal-header .modal-title').html("Result");
-                //$('#contact_dialog .modal-body').html(data);
-                //$("#submitForm").remove();
+
             },
             error: function(jqXHR, status, error) {
                 console.log(status + ": " + error);
@@ -180,34 +231,35 @@ $(document).ready(function () {
     $("#submitForm").on('click', function() {
         $("#loginForm").submit();
     });
-});
-// $(function() {
+});//end funtion
 
-//   $("#newModalForm").validate({
-//     rules: {
-//       pName: {
-//         required: true,
-//         minlength: 8
-//       },
-//       action: "required"
-//     },
-//     messages: {
-//       pName: {
-//         required: "Please enter some data",
-//         minlength: "Your data must be at least 8 characters"
-//       },
-//       action: "Please provide some data"
-//     }
-//   });
-// });
-    // function validateUser() {
-    //     var x = document.forms["loginForm"]["user"].value;
-    //     if (x == "") {
-    //         alert("name must be filled out");
-    //         return false;
-    //     } // end if
-    //     return validateEmail();
-    // } // end fuction
+// signup form
+$(document).ready(function () {
+    $("#signupForm").on("submit", function(e) {
+        var postData = $(this).serializeArray();
+        var formURL = $(this).attr("action");
+        $.ajax({
+            url: formURL,
+            type: "POST",
+            data: postData,
+            success: function(data, textStatus, jqXHR) {
+                if(data=="false"){
+                    $('#RegisterErrorMessage').css("display", "block");
+                }else{
+                    window.location.href = "http://student-projects.miami/BBM/Message.MainWindow.php";
+                }
+            },
+            error: function(jqXHR, status, error) {
+                console.log(status + ": " + error);
+            }
+        });
+        e.preventDefault();
+    });
+     
+    $("#registerForm").on('click', function() {
+        $("#signupForm").submit();
+    });
+});//end funtion
 
         $(function(){
     $(".dropdown").hover(            
