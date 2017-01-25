@@ -16,7 +16,7 @@
 			<!-- ***************************** HTML Comment Line ********************************************************-->
 			<? 	
 
-				CreateTable("TeamMembers","TeamID", "UserID", "TeamName", "Full_Name"); 
+				CreateTable("TeamMembers","#Users","UserID", "TeamID"); 
 			
 			?>
 	</center>
@@ -25,7 +25,7 @@
 
 <?
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-function CreateTable($tablename,$id, $col1, $col2, $col3)
+function CreateTable($tablename,$id, $col1, $col2)
 {
 /***************************************************************
 	* Prupose: Creates a simple 4 column table with a primary key
@@ -41,7 +41,6 @@ function CreateTable($tablename,$id, $col1, $col2, $col3)
 			$id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 			
 			$col1 VARCHAR(255),
 			$col2 VARCHAR(255),
-			$col3 VARCHAR(255),
 			Added_On TIMESTAMP
 			) CHARSET utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ";
 

@@ -9,18 +9,14 @@
 
 								//===== This is how you get data from a HTML form =====
 								$tablename="TeamMembers";
-								$ColumnName1="TeamID";
-								$ColumnValue1=htmlspecialchars($_POST['TeamID']);
-								$ColumnName2="UserID";
-								$ColumnValue2=htmlspecialchars($_POST['UserID']);
-								$ColumnName3="TeamName";
-								$ColumnValue3=htmlspecialchars($_POST['TeamName']);
-								$ColumnName4="Full_Name";
-								$ColumnValue4=htmlspecialchars($_POST['Full_Name']);
+								$ColumnName1="UserID";
+								$ColumnValue1=htmlspecialchars($_POST['UserID']);
+								$ColumnName2="TeamID";
+								$ColumnValue2=htmlspecialchars($_POST['TeamID']);
 							
-echo $ColumnValue1;
+//echo $ColumnValue1;
 	
-				$NewRowID=AddNewRow($tablename, $ColumnName1, $ColumnValue1,$ColumnName2, $ColumnValue2,$ColumnName3, $ColumnValue3,$ColumnName4, $ColumnValue4);
+				$NewRowID=AddNewRow($tablename, $ColumnName1, $ColumnValue1,$ColumnName2, $ColumnValue2);
 			?>
 	</center>
 </body>
@@ -28,8 +24,7 @@ echo $ColumnValue1;
 
 <?
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-function AddNewRow($tablename, $ColumnName1, $ColumnValue1,$ColumnName2, $ColumnValue2, $ColumnName3, $ColumnValue3,$ColumnName4, $ColumnValue4)
-{
+function AddNewRow($tablename, $ColumnName1, $ColumnValue1,$ColumnName2, $ColumnValue2) 
 	/***************************************************************
 	* Prupose: Adds a new row to an existing table
 	* Created By: Allan Miller
@@ -37,9 +32,9 @@ function AddNewRow($tablename, $ColumnName1, $ColumnValue1,$ColumnName2, $Column
 	* Revised By: Allan Miller
 	* Revised On: 13-Dec-2016	
 ****************************************************************/
-		
-		$sql="INSERT INTO $tablename ($ColumnName1, $ColumnName2, $ColumnName3, $ColumnName4) 
-		VALUES('$ColumnValue1', '$ColumnValue2','$ColumnValue3', '$ColumnValue4')";
+{
+		$sql="INSERT INTO $tablename ($ColumnName1, $ColumnName2) 
+		VALUES('$ColumnValue1', '$ColumnValue2')";
 		
 		echo $sql;		
 

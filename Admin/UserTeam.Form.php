@@ -19,7 +19,7 @@ echo "<table class='table table-bordered table-hover'>";
       echo "<tr>";
       echo "<tr>";
          echo "<td>TeamName:</td>";
-        echo "<td><select name='TeamName'>";
+        echo "<td><select name='TeamID'>";
         GetTeamName();
         echo"</select></td>";
       echo "</tr>";
@@ -50,7 +50,7 @@ function GetUsersInfo($UserID)
 
                   //echo "<tr>";
                       echo "<option value='$UserID'>$Full_Name</option>";
-                      echo "<input type='hidden' name='Full_Name' value='$'>";
+                      //echo "<input type='hidden' name='Full_Name' value='$Full_Name'>";
                   //echo "</tr>";
                 } // end while
   return;
@@ -71,8 +71,8 @@ function GetTeamName($TeamName)
                   $TeamID=$ResultsArray2['TeamID'];
                   $TeamCaptainUserID=$ResultsArray2['TeamCaptainUserID'];
 
-                    echo "<option value='$TeamName'>$TeamName</option>";
-                    echo "<input type='hidden' name='TeamID' value='$TeamID'>";
+                    echo "<option value='$TeamID'>$TeamName</option>";
+                    //echo "<input type='hidden' name='TeamID' value='$TeamID'>";
                 } // end while
   return;
 } // end function       
