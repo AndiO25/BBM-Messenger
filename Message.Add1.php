@@ -13,12 +13,10 @@
   width: 300px;
   background: none;
   border: 0px;
-
   }
 </style>
 
 <? session_start();
-
   echo"<form action='Message.Add2.php' method='post'>";     
   echo "<table id='MessageBottomRight' class='table table-bordered'>";
   echo "<tr>";
@@ -30,5 +28,3 @@
   echo "</table>";
   echo "</form>";
 ?>
-
-

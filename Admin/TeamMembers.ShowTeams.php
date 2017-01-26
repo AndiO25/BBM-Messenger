@@ -24,16 +24,20 @@
                   $TeamCaptainUserID=$ResultsArray['TeamCaptainUserID'];
                   $TeamImage=$ResultsArray['TeamImage'];
                       echo "<h1>$TeamName</h1>"; 
+                     // echo "<h1>$TeamCaptainUserID</h1";
                       if (isset($TeamCaptainUserID) && $TeamCaptainUserID != "") {
-                        $TeamCaptain=GetTeamCaptainName($TeamCaptainUserID);
-                      }else{
+
+                  $TeamCaptain=GetTeamCaptainName($TeamCaptainUserID);
+                     } else{
                         $TeamCaptain="No captain!";
                       }
                       
-                      echo "<h3><u>Team Captain:$TeamCaptain</u></h3>";
+                      echo "<h3>Team Captain:$TeamCaptain</h3>";
                       echo "<table class='table table-bordered table-hover'>";
                       echo "<tbody>";
-                        GetTeamMembers($TeamID);                     
+                      echo "<h3>$TeamID</h3>";  
+                        GetTeamMembers($TeamID); 
+
                       echo "<tbody>";
                       echo "</table>"; 
                 }  //while($ResultsArray = mysqli_fetch_array($result)) 
@@ -43,7 +47,7 @@ function GetTeamCaptainName($TeamCaptainUserID)
 {
               include "Student6.ConnectString.php";
               $connect2 = mysqli_connect($host_name, $user_name, $password, $database);
-              $query2="SELECT * FROM Users WHERE UsersID=$TeamCaptainUserID"; 
+              $query2="SELECT * FROM Users WHERE UserID=$TeamCaptainUserID"; 
 
               $result2=mysqli_query($connect2,$query2) or die(mysqli_error()); ;
               $row_cnt2 = mysqli_num_rows($result2);
@@ -80,7 +84,7 @@ function GetUsersInfo($UserID)
 {
               include "Student6.ConnectString.php";
               $connect2 = mysqli_connect($host_name, $user_name, $password, $database);
-              $query2="SELECT * FROM Users WHERE UsersID=$UserID"; 
+              $query2="SELECT * FROM Users WHERE UserID=$UserID"; 
 
               $result2=mysqli_query($connect2,$query2) or die(mysqli_error()); ;
               $row_cnt2 = mysqli_num_rows($result2);
