@@ -10,7 +10,7 @@
 				//===== This is how you get data from a HTML form =====
 								$Message=htmlspecialchars($_POST['Message']);
 								$TeamID="1";
-								$AddedByUserID="3";
+								$AddedByUserID=$_SESSION['UserID'];
 
 								$sql="INSERT INTO Messages (Message,TeamID, AddedByUserID) 
 								VALUES('$Message','$TeamID','$AddedByUserID')";

@@ -45,6 +45,11 @@
       <tr> 
         <td><a href='Users.Add1.php'>Create a New User</a></td>
       </tr>
+
+      <tr> 
+        <td><a href='UserTeam.Add1.php'>Add User to Team</a></td>
+      </tr>
+      
       
       <tr>
         <td><a href='Users.DropTable.php'>Drop the Users Table and Start Over</a></td>
@@ -118,6 +123,9 @@
       </tr>
       <tr>
         <td><a href='Teams.ShowEverthingInTable.php'>Show Everything in the Teams Table</a></td>
+      </tr>
+      <tr>
+        <td><a href='TeamsMembers.ShowEverthingInTable.php'>Show Everything in the TeamsMembers Table</a></td>
       </tr>
       <tr>
         <td><a href='TeamMembers.ShowTeams.php'>Show  the Teams and its Members</a></td>

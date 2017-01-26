@@ -16,7 +16,7 @@
 			<!-- ***************************** HTML Comment Line ********************************************************-->
 			<? 	
 
-				CreateTable("TeamMembers","TeamID", "UserID", "IsDefault"); 
+				CreateTable("TeamMembers","#Users","UserID", "TeamID"); 
 			
 			?>
 	</center>
@@ -36,11 +36,11 @@ function CreateTable($tablename,$id, $col1, $col2)
 	* ADDED: Character set default to be UTF8 when the table is created 	
 ****************************************************************/
 
-		echo "<h3>Creating a table called $tablename with column named the following. $id, $col1, $col2, $col3, $col4, $col5</h3>";
+		echo "<h3>Creating a table called $tablename with column named the following. $id, $col1, $col2, $col3 </h3>";
 		$query="CREATE TABLE IF NOT EXISTS $tablename(
 			$id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 			
-			$col1 INT(6),
-			$col2 INT(6),
+			$col1 VARCHAR(255),
+			$col2 VARCHAR(255),
 			Added_On TIMESTAMP
 			) CHARSET utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ";
 

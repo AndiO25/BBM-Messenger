@@ -30,7 +30,7 @@
   line-height: 35px;
   cursor: pointer;
 }
-.nav-side-menu ul :not(collapsed) .arrow:before,
+/*.nav-side-menu ul :not(collapsed) .arrow:before,
 .nav-side-menu li :not(collapsed) .arrow:before {
   font-family: FontAwesome;
   content: "\f078";
@@ -39,7 +39,7 @@
   padding-right: 10px;
   vertical-align: middle;
   float: right;
-}
+}*/
 .nav-side-menu ul .active,
 .nav-side-menu li .active {
   /*border-left: 3px solid white*/
@@ -60,13 +60,11 @@
   line-height: 28px;
   margin-left: 0px;
 }
-.nav-side-menu ul .sub-menu li:hover,
-.nav-side-menu li .sub-menu li:hover {
+.nav-side-menu ul .sub-menu li:hover{
   background-color: #fed600;
   color: #070707;
 }
-.nav-side-menu ul .sub-menu li:before,
-.nav-side-menu li .sub-menu li:before {
+.sub-menu li:before{
   font-family: FontAwesome;
   content: "\f105";
   display: inline-block;
@@ -75,7 +73,8 @@
   vertical-align: middle;
   color: #fff;
 }
-.nav-side-menu li {
+
+.menu-header {
   padding-left: 0px;
   border-bottom: 1px solid #343333;
 }
@@ -165,22 +164,17 @@ body {
 <br>
   <!--menu starts-->
         <div class="menu-list">
-  
+
             <ul id="menu-content" class="menu-content">
-                <li data-target="#service" >
-                  <a href="#"><i ></i> &emsp; TEAMS </a>
-                </li>  
-                <ul class="sub-menu" id="service">
-                  <li>Team 1</li>
-                  <li>Team 2</li>
-                  <li>Team 3</li>
+                <li class="menu-header">&emsp; TEAMS </li>             
+                <ul class="sub-menu" id="teams">
+                <?php include "Teams.INCLUDE.ShowTeams.php";?>
                 </ul>
 
-                <li data-target="#new">&emsp; USERS</li>
-                <ul class="sub-menu" id="new">
+                <li class="menu-header">&emsp; USERS</li>
+                <ul class="sub-menu" id="users">
                 <?php include "Users.INCLUDE.ShowUsers.php";?>
                 </ul>
-
             </ul>
      </div>
 </div>
