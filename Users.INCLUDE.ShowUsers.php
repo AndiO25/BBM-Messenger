@@ -13,11 +13,11 @@
         //echo "num=$row_cnt<br>";
         while($ResultsArray = mysqli_fetch_array($result)) 
         {
-           $UsersID=$ResultsArray['UserID'];
+           $UserID=$ResultsArray['UserID'];
            $EmailAddress=$ResultsArray['EmailAddress'];
             echo '<li> '.$EmailAddress.'</li>';
                         // <!-- /.caption -->
-        } 
+        }  
 ?>      
 </div>
 

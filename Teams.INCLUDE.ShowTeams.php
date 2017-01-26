@@ -2,7 +2,7 @@
 /*************************************************************************
         *  This is your second query for the actual rows of the database         *
         **************************************************************************/
-        $query="SELECT * FROM Users";
+        $query="SELECT * FROM Teams";
         //echo $query;
         include "Student6.ConnectString.php";
         $connect = mysqli_connect($host_name, $user_name, $password, $database);
@@ -13,10 +13,9 @@
         //echo "num=$row_cnt<br>";
         while($ResultsArray = mysqli_fetch_array($result)) 
         {
-           $UsersID=$ResultsArray['UserID'];
-           $EmailAddress=$ResultsArray['EmailAddress'];
-            echo '<li> '.$EmailAddress.'</li>';
-                        // <!-- /.caption -->
+           $TeamID=$ResultsArray['TeamID'];
+           $Team=$ResultsArray['TeamName'];
+            echo '<li> '.$Team.'</li>';
         } 
 ?>      
 </div>
