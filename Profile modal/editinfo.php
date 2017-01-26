@@ -39,7 +39,7 @@ function UpdateRow($tablename, $ColumnName1, $ColumnValue1, $ColumnName2, $Colum
 			if (mysqli_query($connect, $sql)) 
 			{
 				echo "<h3>Record Updated: </h3>";
-				//header("Location: BBM-Modal.php");
+				header("Location: BBM-Modal2.php");
 			} else {
 				echo "Error: " . $sql . "<br>" . mysqli_error($connect);
 				header("Location: Page.Error.php?Error=". mysqli_error($connect));

@@ -1,67 +1,65 @@
+<? session_start();
+/***************************************************************
+  * Purpose: Main Window for Messages to be displayed
+  * Created By: The BBC team
+  * Created On: 18-Dec-2017
+****************************************************************/
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Black Belt Messager App</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .span10 {
+    padding-left:300px;
+    padding-right:20px; 
+    padding-top:20px;
+    padding-bottom:90px; 
+    background-color:white;
+  }
+  </style>
 </head>
-<style>
+<body onload="moveWindow()">
+<div class="container-fluid">
+  <div class="row-fluid">
 
-#Submit_Changepassword{
-  padding-left: 50%;
-}
-</style>
-<body>
 
-<div class="container">
- 
-  <!-- Modal -->
-  <div class="modal fade" id="_ChangePassword" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Personal Info</h4>
-        </div>
-        <div id="modal-body">
-        <form name="_ChangePassword" onSubmit="" action="Changepasswordbbm2.php" method="POST">
+   <form align="center"  name="_ChangePassword" onSubmit="return validateForm();" action="Changepasswordbbm2.php" method="POST">
       <table>
           <div class ="Email">
-             <br> E-mail  <br> <input type="Text"  name="EmailAddress"></div>
+           <!--  <br> E-mail  <br> <input type="Text"  name="EmailAddress"></div>-->
         <!-- <div class="OldPassword">
        Old Password <input type="Text"  name="Password"></div>-->
         <div class="Newpassword">
        <br>  New Password  <br> <input type="Text"  name="NewPassword"></div>
        <div class="ConfirmPass">
        <br> Confirm Password  <br> <input type="Text"  name="ConfirmPassword"></div>
+       <br>
                 <align="center" colspan="2"><input type="submit" value="Submit">
             </table>
         </form>
+    
   </div>
-   
-       
-      </div>
-      
-    </div>
-  </div>
-  
 </div>
-</div>
-
+<script>
+    
+  function validateForm() 
+    {
+        var x = document.forms["_ChangePassword"]["EmailAddress"].value;
+        if (x == "") 
+        {
+            alert("Email must be filled out");
+            return false;
+        } 
+        //end if function
+        
+    } //end functiom
+</script>
 </body>
 </html>
-
-<script>
-$(document).ready(function () {
-
-    $('#_ChangePassword').modal('show');
-
-});
-
-</script>
-

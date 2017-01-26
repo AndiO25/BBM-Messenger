@@ -14,6 +14,8 @@
 								$ColumnValue5=htmlspecialchars($_POST['ConfirmPassword']);
 							
 								$EmailAddress=($_POST['EmailAddress']);
+								$UserID=$_SESSION['UserID'];
+
 								
 	if (isset($ColumnValue4)&& isset($ColumnValue5)){
 		//============= Check to see if new password1 = new password 2 ==============================
@@ -44,7 +46,7 @@ function changeThePassword($ColumnValue4,$SaltString){
 	$ColumnValue4=hash(sha256,$ColumnValue4+$SaltString);
 	
 		//$sql="UPDATE Users SET 	WHERE Password='$Password'";
-		$sql="UPDATE Users SET Password='$ColumnValue4' , SaltString='$SaltString' WHERE EmailAddress='$EmailAddress'";
+		$sql="UPDATE Users SET Password='$ColumnValue4' , SaltString='$SaltString' WHERE UserID=$UserID";
 	
 		
 	//echo "$sql<br><br>";
@@ -54,7 +56,7 @@ function changeThePassword($ColumnValue4,$SaltString){
 			if (mysqli_query($connect, $sql)) 
 			{
 				//echo "<h3>Your new password is:" .$ColumnValue4. "</h3>";
-				header("Location:BBM-Modal.php");
+				header("Location:BBM-Modal2.php");
 			} else 
 			{
 				echo "Error: " . $sql . "<br>" . mysqli_error($connect);
