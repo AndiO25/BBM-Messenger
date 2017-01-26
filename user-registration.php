@@ -7,12 +7,13 @@
 			$frmPhoneNumber=$_POST['phoneNumber'];
 			$frmAge=$_POST['age'];
 			$frmGender=$_POST['gender'];
+			
 /////////////////////////////////////////////////////////////////////////////////
 		 	$rowcount=CheckEmail($frmEmailAddress); 
-          //echo "ROW ".$rowcount;
+          	echo "ROW ".$rowcount;
 			if ($rowcount == 0)
-				{  //echo "hi";
-					InsertIntoUsers($frmFirstName,$frmMiddletName,$frmLastName,$frmEmailAddress,$frmPassword,$frmPhoneNumber,$frmAge,$frmGender);
+				{  
+				$NewRowID=InsertIntoUsers($frmFirstName,$frmMiddleName,$frmLastName,$frmEmailAddress,$frmPassword,$frmPhoneNumber,$frmAge,$frmGender);
 				}
 			else 
 				{
@@ -39,25 +40,26 @@ function CheckEmail($emailAddress)
 } // end function
 
 ////////////////////////////////////////////////////////////////////////////
-function InsertIntoUsers($firstName,$middletName,$lastName,$emailAddress,$password,$phoneNumber,$age,$gender)
+function InsertIntoUsers($firstName,$middleName,$lastName,$emailAddress,$password,$phoneNumber,$age,$gender)
 {
 		//$Username='me@me.com';
-		$query="INSERT INTO Users (First_Name, Middle_Name, Last_Name, EmailAddress, Password, UserPhone, UserAge, UserGender) VALUES('$firstName', '$middletName', '$lastName', '$emailAddress', $password, $phoneNumber, $age, $gender)";
+		$query="INSERT INTO Users (First_Name, Middle_Name, Last_Name, EmailAddress, Password, UserPhone, UserAge, UserGender) VALUES ('$firstName', '$middletName', '$lastName', '$emailAddress', '$password', '$phoneNumber', '$age', '$gender')";
 		include "Student6.ConnectString.php";
-		//$result = mysqli_query($connect, $query);
+		// $result = mysqli_query($connect, $query);
 		//$UserID = mysqli_insert_id($connect);
-		//echo $connect; 
+		//echo $query;		
+		include "Student6.ConnectString.php";
 		if (mysqli_query($connect, $query)) 
-		{
-			$UserID=mysqli_insert_id($connect); 
-		// 		//echo "<h3>Record Added:" . $UserID . "</h3>";
-		// 		header('Location: courses.php');
-			return $UserID;
-		} else {
-		echo "Error: " . $query . "<br>" . mysqli_error($connect);
-		// 		//header("Location: Page.Error.php?Error=". mysqli_error($connect));
-		
-		}
-			
+			{
+				$NewRowID=mysqli_insert_id($connect); 
+				// echo "<h3>Record Added:" . $NewRowID . "</h3>";
+				// header("Location: Admin.Manage.php");
+			} else {
+				//echo "Error: " . $sql . "<br>" . mysqli_error($connect);
+				header("Location: Page.Error.php?Error=". mysqli_error($connect));
+			}
+			mysqli_close($connect);
+
+	return $NewRowID;
 } // end function
 ?>

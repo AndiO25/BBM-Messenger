@@ -217,7 +217,7 @@ $(document).ready(function () {
                 if(data=="false"){
                     $('#LogInErrorMessage').css("display", "block");
                 }else{
-                    window.location.href = "http://student-projects.miami/BBM/Message.MainWindow.php";
+                    window.location.href = "Message.MainWindow.php";
                 }
 
             },
@@ -246,7 +246,7 @@ $(document).ready(function () {
                 if(data=="false"){
                     $('#RegisterErrorMessage').css("display", "block");
                 }else{
-                    window.location.href = "http://student-projects.miami/BBM/Message.MainWindow.php";
+                    window.location.href = "Message.MainWindow.php";
                 }
             },
             error: function(jqXHR, status, error) {
