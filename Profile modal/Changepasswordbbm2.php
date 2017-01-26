@@ -46,7 +46,7 @@ function changeThePassword($ColumnValue4,$SaltString){
 	$ColumnValue4=hash(sha256,$ColumnValue4+$SaltString);
 	
 		//$sql="UPDATE Users SET 	WHERE Password='$Password'";
-		$sql="UPDATE Users SET Password='$ColumnValue4' , SaltString='$SaltString' WHERE UserID=$UserID";
+		$sql="UPDATE Users SET Password='$ColumnValue4' , SaltString='$SaltString' WHERE UserID='$UserID'";
 	
 		
 	//echo "$sql<br><br>";
