@@ -23,10 +23,12 @@
   echo "<table id='MessageBottomRight' class='table table-bordered'>";
   echo "<tr>";
   echo "<td id='Transparent'>&nbsp;</td>";
-  echo "<td style='background-color: #fed600; '> <textarea class='form-control' style='display:inline; width:90%; max-width:90%; vertical-align:middle;' rows='2' name='Message' value=''></textarea> <input type='submit' value='Send' class='btn btn-default btn-lg'></td>";
+  echo "<td style='background-color: #fed600; '> <input type='text' class='form-control' style='display:inline; width:90%; max-width:90%; vertical-align:middle;' rows='1' name='Message' value=''> <input type='submit' value='Send' class='btn btn-default btn-md'></td>";
   //echo "<td></td>";
   echo "</tr>";
   echo "</tbody>";
   echo "</table>";
   echo "</form>";
 ?>
+
+
