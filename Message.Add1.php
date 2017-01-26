@@ -22,7 +22,7 @@
   echo"<form action='Message.Add2.php' method='post'>";     
   echo "<table id='MessageBottomRight' class='table table-bordered'>";
   echo "<tr>";
-  echo "<td id='Transparent'>&nbsp;</td>";
+  echo "<td id='Transparent'style='background-color:#595959'>&nbsp;</td>";
   echo "<td style='background-color: #fed600; '> <input type='text' class='form-control' style='display:inline; width:90%; max-width:90%; vertical-align:middle;' rows='1' name='Message' value=''> <input type='submit' value='Send' class='btn btn-default btn-md'></td>";
   //echo "<td></td>";
   echo "</tr>";
