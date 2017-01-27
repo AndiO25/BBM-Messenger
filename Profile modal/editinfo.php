@@ -16,9 +16,10 @@
 								$ColumnValue8=htmlspecialchars($_POST['UserGender']);
 								$ColumnName9="UserAge";
 								$ColumnValue9=htmlspecialchars($_POST['UserAge']);
+								$UserID=$_SESSION['UserID'];
 
 	
-				UpdateRow($tablename, $ColumnName1, $ColumnValue1, $ColumnName2, $ColumnValue2,$ColumnName4, $ColumnValue4,$ColumnName5, $ColumnValue5,$ColumnName6, $ColumnValue6,$ColumnName8,$ColumnValue8, $ColumnName9,$ColumnValue9);
+				UpdateRow($tablename, $ColumnName1, $ColumnValue1, $ColumnName2, $ColumnValue2,$ColumnName4, $ColumnValue4,$ColumnName5, $ColumnValue5,$ColumnName6, $ColumnValue6,$ColumnName8,$ColumnValue8, $ColumnName9,$ColumnValue9,$UserID);
 			?>
 	</center>
 </body>
@@ -26,11 +27,11 @@
 
 <?
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-function UpdateRow($tablename, $ColumnName1, $ColumnValue1, $ColumnName2, $ColumnValue2,$ColumnName4, $ColumnValue4,$ColumnName5, $ColumnValue5,$ColumnName6, $ColumnValue6,$ColumnName8,$ColumnValue8, $ColumnName9,$ColumnValue9)
+function UpdateRow($tablename, $ColumnName1, $ColumnValue1, $ColumnName2, $ColumnValue2,$ColumnName4, $ColumnValue4,$ColumnName5, $ColumnValue5,$ColumnName6, $ColumnValue6,$ColumnName8,$ColumnValue8, $ColumnName9,$ColumnValue9,$UserID)
 {
 
 		
-		$sql="UPDATE $tablename SET $ColumnName1='$ColumnValue1', $ColumnName2='$ColumnValue2', $ColumnName4='$ColumnValue4', $ColumnName5='$ColumnValue5', $ColumnName6='$ColumnValue6', $ColumnName8='$ColumnValue8', $ColumnName9='$ColumnValue9' WHERE $ColumnName1='$ColumnValue1'";
+		$sql="UPDATE $tablename SET $ColumnName1='$ColumnValue1', $ColumnName2='$ColumnValue2', $ColumnName4='$ColumnValue4', $ColumnName5='$ColumnValue5', $ColumnName6='$ColumnValue6', $ColumnName8='$ColumnValue8', $ColumnName9='$ColumnValue9' WHERE UserID=$UserID";
 						
 		
 		echo "$sql; <br>";	
