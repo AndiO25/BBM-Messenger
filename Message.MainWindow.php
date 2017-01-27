@@ -1,9 +1,5 @@
 <? session_start();
-/***************************************************************
-  * Purpose: Main Window for Messages to be displayed
-  * Created By: The BBC team
-  * Created On: 18-Dec-2017
-****************************************************************/
+if (empty($_SESSION['user'])) { header("Location: index.php");   }
 ?>
 
 <!DOCTYPE html>

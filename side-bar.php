@@ -150,7 +150,7 @@ body {
 <div class="nav-side-menu">
 <!--The username information can be put on the top nava bar-->
     <div class="brand">
-    <a href="#"><i class="fa fa-user fa-lg user"></i> Profile</a></div>
+    <a href="#"><i class="fa fa-user fa-lg user"></i> <?php echo $_SESSION['emailAddress']; ?></a></div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   
     <div class="input-group">

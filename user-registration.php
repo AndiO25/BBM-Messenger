@@ -7,13 +7,14 @@
 			$frmPhoneNumber=$_POST['phoneNumber'];
 			$frmAge=$_POST['age'];
 			$frmGender=$_POST['gender'];
-			
+			 
 /////////////////////////////////////////////////////////////////////////////////
 		 	$rowcount=CheckEmail($frmEmailAddress); 
           	echo "ROW ".$rowcount;
 			if ($rowcount == 0)
 				{  
 				$NewRowID=InsertIntoUsers($frmFirstName,$frmMiddleName,$frmLastName,$frmEmailAddress,$frmPassword,$frmPhoneNumber,$frmAge,$frmGender);
+				$_SESSION['user'] = $_POST['emailAddress'];
 				}
 			else 
 				{

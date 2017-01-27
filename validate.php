@@ -7,30 +7,34 @@
 	* Revised On: 7-Dec-2016
 	
 ****************************************************************/
-		$frmUserName=$_POST['user'];
+		$frmUserName=$_POST['emailAddress'];
 ///////////////////////////////////////////////////////////////		
-		  $rowCount=checkEmailPassword($frmUserName); 
+		  $userID=checkEmailPassword($frmUserName); 
           //echo $rowCount;
           //echo $resultAccessLevel;
 
-			if ($rowCount > 0)
+			if ($userID > 0)
 				{  //echo "hi";
-					$_SESSION['user'] = $_POST['user'];
+					$_SESSION['user'] = $userID;
+					$_SESSION['emailAddress'] = $frmUserName;
                     //header('Location: http://student-projects.miami/BBM/Message.MainWindow.php'); 
 					echo "true";
 				}
-			else 
+			else  
 				{
 					echo "false";
 				}
 /////////////////////////////////////////////////////////////////////////////////
 function checkEmailPassword($frmUserName)
 {
-		$query="SELECT * FROM Users WHERE EmailAddress='$frmUserName'";
+		$query="SELECT UserID FROM Users WHERE EmailAddress='$frmUserName'";
 		//echo $query;
 		include ("Student6.ConnectString.php");
-		$result=mysqli_query($connect,$query) or die(mysqli_error()); ;
-		$row_cnt = mysqli_num_rows($result);
-		return $row_cnt;
+		
+		$result=mysqli_query($connect,$query) or die(mysqli_error());
+			while($row = mysqli_fetch_assoc($result)) {
+				return empty($row["UserID"])? 0: $row["UserID"];
+			}
 } // end function
+mysqli_close($connect);
 ?>

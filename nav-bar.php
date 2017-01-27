@@ -173,9 +173,9 @@
                 <!-- Form begins -->
                 <form id="loginForm" method="POST" class="form-horizontal" action="validate.php">
                     <div class="form-group">
-                        <label class="col-xs-3 control-label">Username</label>
+                        <label class="col-xs-3 control-label">Email Address</label>
                         <div class="col-xs-5">
-                            <input type="text" class="form-control" name="user" />
+                            <input type="text" class="form-control" name="emailAddress" />
                         </div>
                     </div>
                     <div class="form-group">
