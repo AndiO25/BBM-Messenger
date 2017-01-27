@@ -150,7 +150,8 @@ body {
 <div class="nav-side-menu">
 <!--The username information can be put on the top nava bar-->
     <div class="brand">
-    <a href="#"><i class="fa fa-user fa-lg user"></i> <?php echo $_SESSION['emailAddress']; ?></a></div>
+    <!--treiger the modal-->
+    <a id="myBtn" href="#myModal"><?php echo $_SESSION['emailAddress']; ?></a></div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   
     <div class="input-group">
@@ -178,3 +179,59 @@ body {
             </ul>
      </div>
 </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>User Profile</h2>
+        </div>
+        <div class="modal-body">
+            <table>
+            <tr>
+                <td><img src="UserImages/<? echo $_SESSION['UserImage']; ?>" alt="<? echo $_SESSION['UserImage']; ?>" width='64px'></td>
+              <td>
+                    <ul>
+                        <li> <a href="Editprofileimage.php">Change Profile Picture</a></li>
+                        <li> <a href="personalinfo.php">   Edit Personal Information </a></li>
+                        <li> <a href="Changepasswordbbm.php"> Change Password</a></li>
+                    </ul>
+              </td>
+            </tr>
+            </table>
+        </div>
+        <div class="modal-footer">
+          <img src="http://www.blackbeltcoding.com/wp-content/themes/blackbelt/images/blackbelt-logo-white.svg" alt="BlackBelt Coding" style="width:150px;border:0;"> Messenger
+        </div>
+      </div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
