@@ -25,7 +25,7 @@
 		echo "Your new passwords do not match.  Press the back button and try again </p>"; 
 		exit;
 	}else{
-		changeThePassword($ColumnValue4);
+		changeThePassword($ColumnValue4,$UserID);
 	}
 }else{
 	echo "NewPassword IS BLANK or ConfirmPassword";
@@ -38,7 +38,7 @@
 
 
 
-function changeThePassword($ColumnValue4,$SaltString){
+function changeThePassword($ColumnValue4,$user_id_number){
 	
 	
 	$EmailAddress=$_POST['EmailAddress'];
@@ -46,7 +46,7 @@ function changeThePassword($ColumnValue4,$SaltString){
 	$ColumnValue4=hash(sha256,$ColumnValue4+$SaltString);
 	
 		//$sql="UPDATE Users SET 	WHERE Password='$Password'";
-		$sql="UPDATE Users SET Password='$ColumnValue4' , SaltString='$SaltString' WHERE UserID=$UserID";
+		$sql="UPDATE Users SET Password='$ColumnValue4' , SaltString='$SaltString' WHERE UserID=$user_id_number";
 	
 		
 	//echo "$sql<br><br>";
