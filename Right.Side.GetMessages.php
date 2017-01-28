@@ -18,8 +18,8 @@ header{
 
 </style>
 <?
-echo "<div id='ShowMessages'>";
-echo "<table  class='table table-bordered table-hover'>";
+echo "<div id='ShowMessages' style='margin:1px;'>";
+echo "<table  class='table table-bordered table-hover' style='margin:1px;'>";
 echo " <tbody>";
 $query="SELECT * FROM Messages ORDER BY MessageID DESC Limit 5";
 $query="SELECT * FROM 
@@ -51,7 +51,7 @@ $query="SELECT * FROM
 echo " </tbody>";
 echo " </table>";
 echo "</div>";
-echo '<div id="bottom_of_page">&nbsp;<a name="mylocation"></a></div>';
+//echo '<div id="bottom_of_page">&nbsp;<a name="mylocation"></a></div>';
 
  include "Message.Add1.php" ;
 ?>
