@@ -2,24 +2,24 @@
 			$frmFirstName=$_POST['firstName'];
 			$frmMiddleName=$_POST['middleName'];
 			$frmLastName=$_POST['lastName'];
-			$frmUserName=$_POST['emailAddress'];
+			$frmEmailAddress=$_POST['emailAddress'];
 			$frmPassword=$_POST['password'];
 			$frmPhoneNumber=$_POST['phoneNumber'];
 			$frmAge=$_POST['age'];
 			$frmGender=$_POST['gender'];
-			 
+			
 /////////////////////////////////////////////////////////////////////////////////
-		 	$rowcount=CheckEmail($frmUserName); 
+		 	$rowcount=CheckEmail($frmEmailAddress); 
           	echo "ROW ".$rowcount;
 			if ($rowcount == 0)
 				{  
 				$NewRowID=InsertIntoUsers($frmFirstName,$frmMiddleName,$frmLastName,$frmEmailAddress,$frmPassword,$frmPhoneNumber,$frmAge,$frmGender);
-				createSessions($frmUserName);
-				// $_SESSION['user'] = $_POST['emailAddress'];
+				$_SESSION['user'] = $NewRowID;
+				$_SESSION['emailAddress'] = $frmEmailAddress;
+				echo "true";
 				}
 			else 
 				{
-					//echo "hi new user";
 					echo "false";
 				}
 ?>
@@ -40,7 +40,6 @@ function CheckEmail($emailAddress)
 		return $row_cnt;	
 		
 } // end function
-
 ////////////////////////////////////////////////////////////////////////////
 function InsertIntoUsers($firstName,$middleName,$lastName,$emailAddress,$password,$phoneNumber,$age,$gender)
 {
@@ -54,35 +53,11 @@ function InsertIntoUsers($firstName,$middleName,$lastName,$emailAddress,$passwor
 		if (mysqli_query($connect, $query)) 
 			{
 				$NewRowID=mysqli_insert_id($connect); 
-				// echo "<h3>Record Added:" . $NewRowID . "</h3>";
-				// header("Location: Admin.Manage.php");
 			} else {
 				//echo "Error: " . $sql . "<br>" . mysqli_error($connect);
 				header("Location: Page.Error.php?Error=". mysqli_error($connect));
 			}
 			mysqli_close($connect);
-
 	return $NewRowID;
 } // end function
-
-function createSessions($frmUserName)
-{
-		$query="SELECT UserID, UserImage FROM Users WHERE EmailAddress='$frmUserName'";
-		//echo $query;
-		include ("Student6.ConnectString.php");
-		
-		$result=mysqli_query($connect,$query) or die(mysqli_error());
-			while($row = mysqli_fetch_assoc($result)) {
-				if(empty($row["UserID"])){
-					return "false";
-				}else{
-					$_SESSION["UserImage"] = $row["UserImage"];
-					$_SESSION['user'] = $row["UserID"];
-					$_SESSION['emailAddress'] = $frmUserName;
-					return "true";
-				}
-			}
-} // end function
-
-mysqli_close($connect); 
 ?>

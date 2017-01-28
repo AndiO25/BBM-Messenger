@@ -27,11 +27,6 @@ function checkEmailPassword($frmUserName)
 				}else{
 					$_SESSION["UserImage"] = $row["UserImage"];
 					$_SESSION['user'] = $row["UserID"];
-					$_SESSION['firstName'] = $row["First_Name"];
-					$_SESSION['middleName'] = $row["Middle_Name"];
-					$_SESSION['lastName'] = $row["Last_Name"];
-					$_SESSION['phoneNumber'] = $row["UserPhone"];
-					$_SESSION['age'] = $row["UserAge"];
 					$_SESSION['emailAddress'] = $frmUserName;
 					return "true";
 				}
