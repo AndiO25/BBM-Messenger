@@ -32,19 +32,19 @@
 
   <form  align="center"  name="Personal" onSubmit="" value action="editinfo.php" method="POST">
       <table>
-           <br>  E-mail  <br> <input type="Text"  name="EmailAddress">
+           <br>  E-mail  <br> <input type="Text"  placeholder="<?echo $_SESSION['EmailAddress'];?>" name="EmailAddress">
 
-          <br>  First Name  <br> <input type="Text"  name="First_Name">
+        <!--  <br>  First Name  <br> <input type="Text"  placeholder="<?echo $_SESSION['First_Name'];?>" name="First_Name">
         
-          <br> Middle Name  <br> <input type="Text" name="Middle_Name">
+          <br> Middle Name  <br> <input type="Text" placeholder="<?echo $_SESSION['Middle_Name'];?>" name="Middle_Name">
     
-          <br>  Last Name  <br> <input type="Text"  name="Last_Name">
+          <br>  Last Name  <br> <input type="Text"  placeholder="<?echo $_SESSION['Last_Name'];?>" name="Last_Name">-->
 
-          <!--<br>  User Gender  <br> <input type="Text"  name="UserGender">-->
+         
         
-            <br>  Age  <br> <input type="Text"  name="UserAge">
+            <br>  Age  <br> <input type="Text" placeholder="<?echo $_SESSION['UserAge'];?>" name="UserAge">
        
-            <br>  Phone Number  <br> <input type="Text" name="UserPhone">
+            <br>  Phone Number  <br> <input type="Text" placeholder="<?echo $_SESSION['UserPhone'];?>" name="UserPhone">
 
            <br> Gender  <label> 
                                 <input type="radio" name="UserGender" value="Male" /> Male </label>

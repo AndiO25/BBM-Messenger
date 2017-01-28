@@ -34,13 +34,13 @@ function UpdateRow($tablename, $ColumnName1, $ColumnValue1, $ColumnName2, $Colum
 		$sql="UPDATE $tablename SET $ColumnName1='$ColumnValue1', $ColumnName2='$ColumnValue2', $ColumnName4='$ColumnValue4', $ColumnName5='$ColumnValue5', $ColumnName6='$ColumnValue6', $ColumnName8='$ColumnValue8', $ColumnName9='$ColumnValue9' WHERE UserID=$UserID";
 						
 		
-		echo "$sql; <br>";	
+		//echo "$sql; <br>";	
 
 			include "Student6.ConnectString.php";
 			if (mysqli_query($connect, $sql)) 
 			{
-				echo "<h3>Record Updated: </h3>";
-				header("Location: BBM-Modal2.php");
+				echo "<h3>Record Updated</h3>";
+				header("Location:Message.MainWindow.php");
 			} else {
 				echo "Error: " . $sql . "<br>" . mysqli_error($connect);
 				header("Location: Page.Error.php?Error=". mysqli_error($connect));

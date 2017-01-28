@@ -53,7 +53,7 @@ include "Student6.ConnectString.php";
             if (mysqli_query($connect, $sql)) 
             {
                 
-                header("Location:BBM-Modal2.php");
+                header("Location:Message.MainWindow.php");
             } else 
             {
                 echo "Error: " . $sql . "<br>" . mysqli_error($connect);
