@@ -73,10 +73,10 @@ a, u {
     text-decoration: none;
 }
 </style>
-
+ 
 
 <!-- Trigger/Open The Modal -->
-<button id="myBtn" class="fa fa-user fa-lg user">  Profile</button>
+<button id="myBtn" class="fa fa-user fa-lg user"><?php echo $_SESSION['emailAddress']; ?></button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -107,6 +107,21 @@ a, u {
   </div>
 
 </div>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            // get the current URL
+            var url = $(location).attr('href');
+
+            // if the URL ends with the anchor #portfolioModal93 then we want to open the modal
+            if(url == 'Profile modal/BBM-Modal2.php/#myModal') {
+                $('#myModal').modal('show');
+            }
+        });
+    </script>
 
 <script>
 // Get the modal
