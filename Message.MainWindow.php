@@ -11,6 +11,10 @@ if (empty($_SESSION['user'])) { header("Location: index.php");   }
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <link rel="stylesheet" type="text/css" href="Profile-modal/modal.css">
+ <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
   <style>
   .span10 {
     padding-left:300px;
@@ -21,7 +25,7 @@ if (empty($_SESSION['user'])) { header("Location: index.php");   }
   }
   </style>
 </head>
-<<body onload="moveWindow()">>
+<body onload="moveWindow()">
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span2"><? include "side-bar.php"; ?></div>

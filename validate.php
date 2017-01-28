@@ -9,32 +9,35 @@
 ****************************************************************/
 		$frmUserName=$_POST['emailAddress'];
 ///////////////////////////////////////////////////////////////		
-		  $userID=checkEmailPassword($frmUserName); 
+		  checkEmailPassword($frmUserName); 
           //echo $rowCount;
           //echo $resultAccessLevel;
 
-			if ($userID > 0)
-				{  //echo "hi";
-					$_SESSION['user'] = $userID;
-					$_SESSION['emailAddress'] = $frmUserName;
-                    //header('Location: http://student-projects.miami/BBM/Message.MainWindow.php'); 
-					echo "true";
-				}
-			else  
-				{
-					echo "false";
-				}
 /////////////////////////////////////////////////////////////////////////////////
 function checkEmailPassword($frmUserName)
 {
-		$query="SELECT UserID FROM Users WHERE EmailAddress='$frmUserName'";
+		$query="SELECT UserID, UserImage FROM Users WHERE EmailAddress='$frmUserName'";
 		//echo $query;
 		include ("Student6.ConnectString.php");
 		
 		$result=mysqli_query($connect,$query) or die(mysqli_error());
 			while($row = mysqli_fetch_assoc($result)) {
-				return empty($row["UserID"])? 0: $row["UserID"];
+				if(empty($row["UserID"])){
+					return "false";
+				}else{
+					$_SESSION["UserImage"] = $row["UserImage"];
+					$_SESSION['user'] = $row["UserID"];
+					$_SESSION['firstName'] = $row["First_Name"];
+					$_SESSION['middleName'] = $row["Middle_Name"];
+					$_SESSION['lastName'] = $row["Last_Name"];
+					$_SESSION['phoneNumber'] = $row["UserPhone"];
+					$_SESSION['age'] = $row["UserAge"];
+					$_SESSION['emailAddress'] = $frmUserName;
+					return "true";
+				}
+					 
+				//return empty($row["UserID"])? 0: $row["UserID"];
 			}
 } // end function
-mysqli_close($connect);
+mysqli_close($connect); 
 ?>

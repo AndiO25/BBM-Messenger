@@ -2,19 +2,20 @@
 			$frmFirstName=$_POST['firstName'];
 			$frmMiddleName=$_POST['middleName'];
 			$frmLastName=$_POST['lastName'];
-			$frmEmailAddress=$_POST['emailAddress'];
+			$frmUserName=$_POST['emailAddress'];
 			$frmPassword=$_POST['password'];
 			$frmPhoneNumber=$_POST['phoneNumber'];
 			$frmAge=$_POST['age'];
 			$frmGender=$_POST['gender'];
 			 
 /////////////////////////////////////////////////////////////////////////////////
-		 	$rowcount=CheckEmail($frmEmailAddress); 
+		 	$rowcount=CheckEmail($frmUserName); 
           	echo "ROW ".$rowcount;
 			if ($rowcount == 0)
 				{  
 				$NewRowID=InsertIntoUsers($frmFirstName,$frmMiddleName,$frmLastName,$frmEmailAddress,$frmPassword,$frmPhoneNumber,$frmAge,$frmGender);
-				$_SESSION['user'] = $_POST['emailAddress'];
+				createSessions($frmUserName);
+				// $_SESSION['user'] = $_POST['emailAddress'];
 				}
 			else 
 				{
@@ -63,4 +64,25 @@ function InsertIntoUsers($firstName,$middleName,$lastName,$emailAddress,$passwor
 
 	return $NewRowID;
 } // end function
+
+function createSessions($frmUserName)
+{
+		$query="SELECT UserID, UserImage FROM Users WHERE EmailAddress='$frmUserName'";
+		//echo $query;
+		include ("Student6.ConnectString.php");
+		
+		$result=mysqli_query($connect,$query) or die(mysqli_error());
+			while($row = mysqli_fetch_assoc($result)) {
+				if(empty($row["UserID"])){
+					return "false";
+				}else{
+					$_SESSION["UserImage"] = $row["UserImage"];
+					$_SESSION['user'] = $row["UserID"];
+					$_SESSION['emailAddress'] = $frmUserName;
+					return "true";
+				}
+			}
+} // end function
+
+mysqli_close($connect); 
 ?>

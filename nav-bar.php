@@ -57,7 +57,6 @@
         text-indent: 170px;
     }
   </style>
-
 <!-- Navbar -->
 <nav class="navbar navbar-default">
   <div class="container">
