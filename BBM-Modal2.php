@@ -20,9 +20,9 @@
             <td><img src="UserImages/<? echo $_SESSION['UserImage']; ?>" alt="<? echo $_SESSION['UserImage']; ?>" width='64px'></td>
           <td>
                 <ul>
-                    <li> <a href="Profile-modal/Editprofileimage.php">Change Profile Picture</a></li>
-                    <li> <a href="Profile-modal/personalinfo.php">Edit Personal Information </a></li>
-                    <li> <a href="Profile-modal/Changepasswordbbm.php">Change Password</a></li>
+                    <li> <a href="Editprofileimage.php">Change Profile Picture</a></li>
+                    <li> <a href="personalinfo.php">Edit Personal Information </a></li>
+                    <li> <a href="Changepasswordbbm.php">Change Password</a></li>
                     <li>  <a href="Logout.php">Log Out </a> </li>
                 </ul>
           </td>
