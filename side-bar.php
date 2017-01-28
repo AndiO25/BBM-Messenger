@@ -198,12 +198,15 @@ body {
                     <li> <a href="Profile-modal/Editprofileimage.php">Change Profile Picture</a></li>
                     <li> <a href="Profile-modal/personalinfo.php">Edit Personal Information </a></li>
                     <li> <a href="Profile-modal/Changepasswordbbm.php">Change Password</a></li>
+                    <li>  <a href="Profile-modal/Logout.php">Log Out </a> </li>
                 </ul>
           </td>
         </tr>
         </table>
     </div>
+
     <div class="j-modal-footer">
+
       <img src="http://www.blackbeltcoding.com/wp-content/themes/blackbelt/images/blackbelt-logo-white.svg" alt="BlackBelt Coding" style="width:150px;border:0;"> Messenger
     </div>
   </div>
