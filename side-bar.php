@@ -192,7 +192,7 @@ body {
         <div class="modal-body">
             <table>
             <tr>
-                <td><img src="UserImages/<? echo $_SESSION['UserImage']; ?>" alt="<? echo $_SESSION['UserImage']; ?>" width='64px'></td>
+                <td><img src="../UserImages/<? echo $_SESSION['UserImage']; ?>" alt="<? echo $_SESSION['UserImage']; ?>" width='64px'></td>
               <td>
                     <ul>
                         <li> <a href="Editprofileimage.php">Change Profile Picture</a></li>
