@@ -1,9 +1,5 @@
 <? session_start();
-/***************************************************************
-  * Purpose: Main Window for Messages to be displayed
-  * Created By: The BBC team
-  * Created On: 18-Dec-2017
-****************************************************************/
+
 ?>
 
 <!DOCTYPE html>
@@ -32,16 +28,14 @@
 
    <form align="center"  name="_ChangePassword" onSubmit="return validateForm();" action="Changepasswordbbm2.php" method="POST">
       <table>
-          <div class ="Email">
-           <!--  <br> E-mail  <br> <input type="Text"  name="EmailAddress"></div>-->
-        <!-- <div class="OldPassword">
-       Old Password <input type="Text"  name="Password"></div>-->
+        <div class="OldPassword">
+          <br> Old Password <br> <input type="Text"  name="Password"></div>
         <div class="Newpassword">
-       <br>  New Password  <br> <input type="Text"  name="NewPassword"></div>
+          <br>  New Password  <br> <input type="Text"  name="NewPassword"></div>
        <div class="ConfirmPass">
-       <br> Confirm Password  <br> <input type="Text"  name="ConfirmPassword"></div>
+          <br> Confirm Password  <br> <input type="Text"  name="ConfirmPassword"></div>
        <br>
-                <align="center" colspan="2"><input type="submit" value="Submit">
+         <align="center" colspan="2"><input type="submit" value="Submit">
             </table>
         </form>
     
@@ -51,10 +45,10 @@
     
   function validateForm() 
     {
-        var x = document.forms["_ChangePassword"]["EmailAddress"].value;
+        var x = document.forms["_ChangePassword"]["Password"].value;
         if (x == "") 
         {
-            alert("Email must be filled out");
+            alert("Old Password must be filled out");
             return false;
         } 
         //end if function

@@ -5,7 +5,7 @@
 								$tablename="Users";
 								
 								$ColumnName2="Password";
-								$ColumnValue2=htmlspecialchars($_POST['Password']);
+								$frmOldPassword=htmlspecialchars($_POST['Password']);
 								$ColumnName3="SaltString";
 								$ColumnValue3=htmlspecialchars($_POST['SaltString']);
 								$ColumnName4="NewPassword";
@@ -15,10 +15,29 @@
 							
 								$EmailAddress=($_POST['EmailAddress']);
 								$UserID=$_SESSION['UserID'];
+								//echo "$UserID";
 
-								
+
+	   /////////////////////////////Check old password match//////////////////////////////////////
+   //echo "checking old password";
+   $OldPassword=checkPassword($UserID);
+    if($OldPassword != $frmOldPassword) {
+    	echo "<p style='vertical-align: middle; width: 800px; text-align: center; font-size: 44pt; font-family: Arial; color:black; background-color: red;'>";
+		echo "Your old password does not match what we have stored. Go back and try again </p>"; 
+		
+    }
+
+          
+
+			
+				
+			
+//echo "checking if passwords match";
+      
+
 	if (isset($ColumnValue4)&& isset($ColumnValue5)){
-		//============= Check to see if new password1 = new password 2 ==============================
+		
+
 	if (trim($ColumnValue4) != trim($ColumnValue5))
 	{
 		echo "<p style='vertical-align: middle; width: 800px; text-align: center; font-size: 44pt; font-family: Arial; color:black; background-color: red;'>";
@@ -32,20 +51,37 @@
 	echo $ColumnValue4;
 	echo $ColumnValue5; 
 }
+//echo "OK...I am done";
+////////////////////////////////////////////////
+function checkPassword($UserID){
 
 
+	    $query="SELECT Password FROM Users WHERE UserID='$UserID'";
+	    //echo $query;
+		include ("Student6.ConnectString.php");
+		//echo $query;
+		$connect = mysqli_connect($host_name, $user_name, $password, $database);
+		$result=mysqli_query($connect,$query) or die(mysqli_error()); ;
+		$row_cnt = mysqli_num_rows($result);
+		mysqli_close($connect);
+		$OldPassword=$ResultArray['Password'];
+		//printf("Result set has %d rows.\n", $row_cnt);
+		//echo "num=$row_cnt<br>";
+		return $OldPassword;
+} // end function
 
 
-
-
+///////////////////////////////////////////////////////////////
 function changeThePassword($ColumnValue4,$user_id_number){
 	
 	
 	$EmailAddress=$_POST['EmailAddress'];
 	$SaltString="123ABC";
 	$ColumnValue4=hash(sha256,$ColumnValue4+$SaltString);
-	
 		//$sql="UPDATE Users SET 	WHERE Password='$Password'";
+
+
+
 		$sql="UPDATE Users SET Password='$ColumnValue4' , SaltString='$SaltString' WHERE UserID=$user_id_number";
 	
 		
@@ -56,7 +92,7 @@ function changeThePassword($ColumnValue4,$user_id_number){
 			if (mysqli_query($connect, $sql)) 
 			{
 				//echo "<h3>Your new password is:" .$ColumnValue4. "</h3>";
-				header("Location:BBM-Modal2.php");
+				header("Location:Message.MainWindow.php");
 			} else 
 			{
 				echo "Error: " . $sql . "<br>" . mysqli_error($connect);
